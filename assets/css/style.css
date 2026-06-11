@@ -12,7 +12,7 @@
 }
 
 html {
-    scroll-behavior: smooth; /* Efek transisi gulir halus saat menu navbar diklik */
+    scroll-behavior: smooth;
 }
 
 * {
@@ -49,13 +49,17 @@ main {
     align-items: center;
     padding: 10px 40px;
     z-index: 1000;
-    
     background-color: rgba(55, 119, 121, 0.65);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 50px;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+}
+
+.page-navbar {
+    background-color: rgba(55, 119, 121, 0.95) !important;
 }
 
 .navbar .logo {
@@ -75,6 +79,17 @@ main {
     font-weight: 800;
     color: var(--white);
     letter-spacing: -0.5px;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+}
+
+@media (min-width: 769px) {
+    .nav-links {
+        margin-left: auto;
+    }
 }
 
 .nav-links a {
@@ -97,16 +112,7 @@ main {
     border-bottom: 2px solid var(--bright-yellow);
 }
 
-.navbar {
-    justify-content: space-between;
-}
-@media (min-width: 769px) {
-    .nav-links {
-        margin-left: auto; /* Mendorong menu ke sisi kanan dengan rapi */
-    }
-}
-
-/* --- HERO SECTION (FULL BACKGROUND) --- */
+/* --- HERO SECTION --- */
 .hero-section {
     position: relative;
     height: 100vh;
@@ -156,7 +162,6 @@ main {
     text-shadow: 1px 2px 8px rgba(0,0,0,0.3);
 }
 
-/* --- TOMBOL TUNGGAL TRANSPARAN --- */
 .single-button {
     display: flex;
     justify-content: center;
@@ -172,7 +177,6 @@ main {
     align-items: center;
     gap: 10px;
     transition: all 0.3s ease;
-    
     background-color: rgba(255, 255, 255, 0.1);
     color: var(--white);
     backdrop-filter: blur(5px);
@@ -187,9 +191,14 @@ main {
     box-shadow: 0 8px 25px rgba(0,0,0,0.2);
 }
 
-/* --- KEUNGGULAN / FEATURES SECTION --- */
+/* --- STRUCTURE GLOBAL CONTENT & GRID --- */
+.sub-page-container {
+    margin-top: 140px;
+    padding-bottom: 80px;
+}
+
 .features-section {
-    padding: 100px 6% 40px; /* Menambah padding-top agar tidak tertutup navbar melayang */
+    padding: 60px 6% 40px;
     max-width: 1200px;
     margin: 0 auto;
 }
@@ -198,14 +207,18 @@ main {
     margin-bottom: 40px;
 }
 
-.section-intro h2, .section-title h2 {
+.text-center {
+    text-align: center;
+}
+
+.section-intro h2 {
     font-size: 2rem;
     color: var(--myrtle-green);
     font-weight: 800;
     margin-bottom: 10px;
 }
 
-.section-intro p, .section-title p {
+.section-intro p {
     color: #7f8c8d;
     font-size: 1.05rem;
 }
@@ -227,174 +240,64 @@ main {
     border: 1px solid rgba(55, 119, 121, 0.04);
 }
 
-.feature-icon-wrapper {
-    background-color: rgba(122, 205, 211, 0.15);
-    color: var(--myrtle-green);
-    padding: 15px;
-    border-radius: 12px;
-    font-size: 1.5rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+/* --- SEKSI PANDUAN (BERDASARKAN GAMBAR REFERENSI) --- */
+.panduan-grid {
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)) !important;
+    gap: 20px;
 }
 
-.feature-text h3 {
-    font-size: 1.15rem;
-    color: var(--dark-text);
-    margin-bottom: 6px;
-    font-weight: 700;
-}
-
-.feature-text p {
-    color: #6a7b7c;
-    font-size: 0.92rem;
-    line-height: 1.4;
-}
-
-/* --- KAMAR PREVIEW SECTION --- */
-.kamar-preview {
-    padding: 100px 6% 80px; /* Menambah padding-top agar tidak tertutup navbar melayang */
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.section-title {
-    text-align: left;
-    margin-bottom: 40px;
-}
-
-.kamar-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
-    gap: 30px;
-}
-
-.kamar-card {
-    background-color: var(--white);
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow: var(--card-shadow);
-    position: relative;
-    transition: transform 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
-    border: 1px solid rgba(0,0,0,0.02);
-}
-
-.kamar-card:hover {
-    transform: translateY(-6px);
-}
-
-.badge-status {
-    position: absolute;
-    top: 15px;
-    left: 15px;
-    padding: 6px 14px;
-    border-radius: 30px;
-    font-size: 0.75rem;
-    font-weight: 700;
-    color: var(--white);
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
-    z-index: 5;
-}
-
-.badge-status.tersedia {
-    background-color: var(--myrtle-green);
-}
-
-.badge-price {
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    background-color: rgba(44, 62, 80, 0.75);
-    color: var(--white);
-    padding: 6px 12px;
-    border-radius: 30px;
-    font-size: 0.85rem;
-    font-weight: 700;
-    backdrop-filter: blur(4px);
-    z-index: 5;
-}
-
-.badge-price span {
-    font-size: 0.7rem;
-    font-weight: 400;
-    opacity: 0.8;
-}
-
-.kamar-img {
-    height: 230px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-}
-
-.placeholder-icon {
-    font-size: 3rem;
-    color: rgba(0,0,0,0.15);
-}
-
-.kamar-detail {
-    padding: 25px;
-}
-
-.room-category {
-    font-size: 0.8rem;
-    color: var(--alloy-orange);
-    font-weight: 700;
-    text-transform: uppercase;
-    display: block;
-    margin-bottom: 5px;
-}
-
-.kamar-detail h3 {
-    font-size: 1.3rem;
-    color: var(--dark-text);
-    margin-bottom: 15px;
-    font-weight: 800;
-}
-
-.facilities-list {
-    list-style: none;
-    margin-bottom: 25px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-}
-
-.facilities-list li {
-    font-size: 0.85rem;
-    color: #555;
-    background-color: #f0f5f6;
-    padding: 6px 12px;
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    font-weight: 600;
-}
-
-.facilities-list li i {
-    color: var(--myrtle-green);
-    margin-right: 6px;
-}
-
-.btn-card-wa {
-    display: block;
+.card-panduan {
+    flex-direction: column !important;
     text-align: center;
-    text-decoration: none;
-    background-color: var(--myrtle-green);
+    align-items: center;
+    padding: 35px 25px;
+}
+
+.feature-icon-wrapper-circle {
+    background-color: var(--bright-yellow);
     color: var(--white);
-    padding: 12px;
-    border-radius: 12px;
-    font-weight: 700;
-    transition: background-color 0.3s ease;
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    font-size: 1.8rem;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
 }
 
-.btn-card-wa:hover {
-    background-color: #27595b;
+.badge-number {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background-color: var(--alloy-orange);
+    color: var(--white);
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    font-size: 0.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
 }
 
-/* --- FLOATING WA & FOOTER --- */
+.card-panduan .feature-text {
+    margin-top: 20px;
+}
+
+.card-panduan .feature-text h3 {
+    font-size: 1.2rem;
+    margin-bottom: 12px;
+}
+
+.card-panduan .feature-text p {
+    font-size: 0.9rem;
+    color: #7f8c8d;
+}
+
+/* --- FLOATING ELEMENTS & GLOBAL RESPONSIVE --- */
 .floating-wa {
     position: fixed;
     bottom: 30px;
@@ -418,15 +321,6 @@ main {
     transform: scale(1.1);
 }
 
-footer {
-    background-color: var(--myrtle-green);
-    color: var(--white);
-    text-align: center;
-    padding: 40px;
-    font-size: 0.95rem;
-}
-
-/* --- MEDIA QUERY MOBILE RESPONSIVE --- */
 @media (max-width: 992px) {
     .navbar {
         padding: 10px 20px;
@@ -457,5 +351,8 @@ footer {
     }
     .hero-section {
         height: 95vh;
+    }
+    .sub-page-container {
+        margin-top: 180px;
     }
 }
