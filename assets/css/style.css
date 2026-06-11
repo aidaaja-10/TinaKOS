@@ -1,4 +1,4 @@
-/* --- PALET WARNA TINAKOS & RESET --- */
+/* PALET WARNA TINAKOS  */
 :root {
     --alloy-orange: #C95D16;
     --bright-yellow: #F7AA29;
@@ -36,7 +36,7 @@ main {
     width: 100%;
 }
 
-/* --- NAVIGATION BAR (FLOATING CAPSULE) --- */
+/*NAVIGATION BAR */
 .navbar {
     position: fixed;
     top: 25px;
@@ -112,7 +112,7 @@ main {
     border-bottom: 2px solid var(--bright-yellow);
 }
 
-/* --- HERO SECTION --- */
+/* HERO SECTION */
 .hero-section {
     position: relative;
     height: 100vh;
@@ -185,7 +185,6 @@ main {
 }
 
 
-/* --- STRUCTURE GLOBAL CONTENT & GRID --- */
 .sub-page-container {
     margin-top: 140px;
     padding-bottom: 80px;
@@ -233,12 +232,10 @@ main {
     box-shadow: var(--card-shadow);
     border: 1px solid rgba(55, 119, 121, 0.04);
 }
-/* ==========================================================================
-   CSS SECTON PANDUAN: MINIMALIST TAB SWITCHER
-   ========================================================================== */
+/* CSS SECTON PANDUAN: MINIMALIST TAB SWITCHER */
 
 #panduan {
-    background-color: #fdfbf7; /* Warna dasar krem soft agar clean */
+    background-color: #fdfbf7; 
     padding: 90px 8% 80px;
     width: 100%;
 }
@@ -247,15 +244,14 @@ main {
     max-width: 1200px;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: 1fr 1.2fr; /* Membagi halaman Kiri & Kanan */
+    grid-template-columns: 1fr 1.2fr; 
     gap: 60px;
     align-items: center;
 }
 
-/* SISI KIRI: INTRO JUDUL */
 #panduan .section-badge {
     display: inline-block;
-    background-color: rgba(55, 119, 121, 0.1); /* Nuansa Myrtle Green transparan */
+    background-color: rgba(55, 119, 121, 0.1); 
     color: #377779;
     padding: 6px 16px;
     border-radius: 30px;
@@ -280,13 +276,13 @@ main {
     line-height: 1.6;
 }
 
-/* SISI KANAN: SISTEM TAB NAVIGATION */
 .panduan-tab-box {
     width: 100%;
 }
 
+/* Kamar */
 .kamar-preview {
-    padding: 100px 6% 80px; /* Menambah padding-top agar tidak tertutup navbar melayang */
+    padding: 100px 6% 80px; 
     max-width: 1200px;
     margin: 0 auto;
 }
@@ -413,7 +409,7 @@ main {
     padding: 12px 15px;
     font-size: 0.95rem;
     font-weight: 600;
-    color: #94a3b8; /* Abu-abu halus saat tidak aktif */
+    color: #94a3b8; 
     cursor: pointer;
     transition: all 0.3s ease;
     position: relative;
@@ -424,26 +420,24 @@ main {
     color: #377779;
 }
 
-/* Keadaan Tombol Saat Aktif (Garis Bawah Oranye) */
 .tab-btn.active {
     color: #377779;
     font-weight: 700;
-    border-bottom: 2px solid #C95D16; /* Oranye khas TinaKOS */
+    border-bottom: 2px solid #C95D16; 
 }
 
-/* KONTEN PENJELASAN PANDUAN */
 .tab-content-wrapper {
-    min-height: 180px; /* Menjaga tinggi agar layout tidak naik-turun */
+    min-height: 180px; 
 }
 
-/* LOGIKA UTAMA SEMBUNYI-MUNCUL */
+
 .tab-pane {
-    display: none; /* Sembunyikan semua langkah secara bawaan */
-    animation: fadeTabIn 0.4s ease-in-out forwards; /* Efek animasi muncul halus */
+    display: none; 
+    animation: fadeTabIn 0.4s ease-in-out forwards; 
 }
 
 .tab-pane.active {
-    display: block; /* Hanya tampilkan langkah yang memiliki kelas active */
+    display: block; 
 }
 
 @keyframes fadeTabIn {
@@ -468,7 +462,6 @@ main {
     margin-bottom: 25px;
 }
 
-/* TOMBOL AKSI DI DALAM TAB */
 .btn-pane-action {
     display: inline-flex;
     align-items: center;
@@ -497,10 +490,9 @@ main {
     background-color: #1fba55;
 }
 
-/* LAYAR RESPONSIVE MOBILE SMARTPHONE */
 @media (max-width: 900px) {
     .panduan-tab-container {
-        grid-template-columns: 1fr; /* Berubah menjadi susunan atas-bawah */
+        grid-template-columns: 1fr; 
         gap: 40px;
     }
     #panduan {
@@ -510,7 +502,7 @@ main {
 
 @media (max-width: 600px) {
     .tab-navigation {
-        overflow-x: auto; /* Menu tab bisa digeser ke samping jika layar HP terlalu sempit */
+        overflow-x: auto; 
         white-space: nowrap;
         padding-bottom: 5px;
     }
@@ -519,7 +511,7 @@ main {
         padding: 10px 8px;
     }
 }
-/* --- FLOATING ELEMENTS & GLOBAL RESPONSIVE --- */
+/* WA*/
 .floating-wa {
     position: fixed;
     bottom: 30px;
@@ -706,4 +698,146 @@ main {
 
 .btn-card-wa:hover {
     background-color: #27595b;
+}
+
+/* CSS Bagian Mutu*/
+
+.mutu-banner-section {
+    background-color: #ffffff; 
+    padding: 60px 0 100px 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.mutu-top-green-banner {
+    background-color: var(--myrtle-green);
+    max-width: 1140px; 
+    margin: 0 auto; 
+    padding: 50px 4% 120px 4%; /* Jarak vertikal diperketat agar pas dan tidak kosong */
+    text-align: center;
+    border-radius: 24px; 
+    box-shadow: 0 10px 30px rgba(55, 119, 121, 0.15);
+    position: relative;
+    z-index: 1;
+}
+
+.mutu-top-green-banner .section-badge {
+    display: inline-block;
+    background-color: rgba(255, 255, 255, 0.15);
+    color: var(--bright-yellow);
+    padding: 5px 14px;
+    border-radius: 30px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 12px;
+}
+
+.mutu-top-green-banner h2 {
+    font-size: 2.2rem;
+    color: var(--white);
+    font-weight: 800;
+    margin-bottom: 10px;
+    letter-spacing: -0.5px;
+}
+
+.mutu-top-green-banner p {
+    color: var(--desert-sand);
+    font-size: 1rem;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.5;
+}
+
+.mutu-hanging-container {
+    max-width: 1060px; 
+    margin: -95px auto 0 auto; 
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    position: relative;
+    z-index: 10;
+    box-sizing: border-box;
+}
+
+.mutu-hanging-card {
+    background-color: var(--white);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.07);
+    border: 1px solid rgba(55, 119, 121, 0.08);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease;
+}
+
+.mutu-hanging-card:hover {
+    transform: translateY(-5px);
+}
+
+.mutu-card-img-wrapper {
+    position: relative;
+    width: 100%;
+    height: 150px;
+}
+
+.mutu-card-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.mutu-step-number {
+    position: absolute;
+    bottom: -18px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 36px;
+    height: 36px;
+    background-color: var(--middle-blue);
+    color: var(--white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.95rem;
+    border: 4px solid var(--white);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+    z-index: 5;
+}
+
+.mutu-card-text {
+    padding: 28px 18px 22px 18px;
+    text-align: center;
+}
+
+.mutu-card-text h3 {
+    font-size: 1.1rem;
+    color: var(--myrtle-green);
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+
+.mutu-card-text p {
+    font-size: 0.84rem;
+    color: #64748b;
+    line-height: 1.5;
+}
+
+@media (max-width: 992px) {
+    .mutu-banner-section {
+        padding: 40px 20px 60px 20px;
+    }
+    .mutu-top-green-banner {
+        padding: 40px 20px 90px 20px;
+    }
+    .mutu-hanging-container {
+        grid-template-columns: 1fr;
+        margin-top: -65px;
+        gap: 25px;
+        padding: 0;
+    }
 }
