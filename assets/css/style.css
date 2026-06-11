@@ -285,6 +285,121 @@ main {
     width: 100%;
 }
 
+.kamar-preview {
+    padding: 100px 6% 80px; /* Menambah padding-top agar tidak tertutup navbar melayang */
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-title {
+    text-align: left;
+    margin-bottom: 40px;
+}
+
+.kamar-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+    gap: 30px;
+}
+
+.kamar-card {
+    background-color: var(--white);
+    border-radius: 20px;
+    overflow: visible;
+    box-shadow: var(--card-shadow);
+    position: relative;
+    transition: transform 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+    border: 1px solid rgba(0,0,0,0.02);
+}
+
+.kamar-card:hover {
+    transform: translateY(-6px);
+}
+
+.badge-status {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    padding: 6px 14px;
+    border-radius: 30px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--white);
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    z-index: 5;
+}
+
+.badge-status.tersedia {
+    background-color: var(--myrtle-green);
+}
+
+.badge-price {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background-color: rgba(44, 62, 80, 0.75);
+    color: var(--white);
+    padding: 6px 12px;
+    border-radius: 30px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    backdrop-filter: blur(4px);
+    z-index: 5;
+}
+
+.badge-price span {
+    font-size: 0.7rem;
+    font-weight: 400;
+    opacity: 0.8;
+}
+
+.kamar-img {
+    height: 230px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.placeholder-icon {
+    font-size: 3rem;
+    color: rgba(0,0,0,0.15);
+}
+
+.kamar-detail {
+    padding: 25px;
+}
+
+.room-category {
+    font-size: 0.8rem;
+    color: var(--alloy-orange);
+    font-weight: 700;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.kamar-detail h3 {
+    font-size: 1rem;
+    color: var(--dark-text);
+    margin-bottom: 2px;
+    
+}
+
+.kamar-detail strong {
+    font-size: 1.5rem;
+    color: var(--dark-text);
+    margin-bottom: 15px;
+    font-weight: 700;  
+}
+
+.kamar-detail small {
+    margin-bottom: 15px;
+    font-size: 1rem;
+}
+
+
 .tab-navigation {
     display: flex;
     border-bottom: 1px solid #e2e8f0;
@@ -462,4 +577,133 @@ main {
     .sub-page-container {
         margin-top: 180px;
     }
+}
+
+.btn-card-group {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.btn-card-detail {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    background-color: transparent;
+    color: var(--myrtle-green);
+    padding: 12px;
+    border-radius: 12px;
+    font-weight: 700;
+    border: 2px solid var(--myrtle-green);
+    transition: all 0.3s ease;
+}
+
+.btn-card-detail:hover {
+    background-color: var(--myrtle-green);
+    color: var(--white);
+}
+
+.modal-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+    z-index: 2000;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-overlay.aktif {
+    display: flex;
+}
+
+.modal-card {
+    background: var(--white);
+    border-radius: 20px;
+    width: 90%;
+    max-width: 800px;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+}
+
+.modal-close {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: rgba(0,0,0,0.4);
+    color: var(--white);
+    border: none;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1rem;
+    z-index: 10;
+}
+
+.modal-img {
+    width: 45%;
+    background-color: var(--desert-sand);
+    background-size: cover;
+    background-position: center;
+}
+
+.modal-body {
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.facilities-list li {
+    font-size: 0.85rem;
+    color: #555;
+    background-color: #f0f5f6;
+    padding: 6px 14px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    list-style: none;
+}
+
+.facilities-list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+
+.modal-body .btn-card-wa {
+    width: 100%;
+    margin-top: 15px;
+    padding: 8px;
+    text-align: center;
+    font-size: 1rem;
+    display: block;        
+    text-decoration: none; 
+    background-color: var(--myrtle-green); 
+    color: var(--white);   
+    border-radius: 12px;   
+    font-weight: 700;      
+}
+
+.btn-card-wa {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    background-color: var(--myrtle-green);
+    color: var(--white);
+    padding: 12px;
+    border-radius: 12px;
+    font-weight: 700;
+    transition: background-color 0.3s ease;
+}
+
+.btn-card-wa:hover {
+    background-color: #27595b;
 }

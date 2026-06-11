@@ -90,3 +90,26 @@ function bukaLangkah(event, namaLangkah) {
     event.currentTarget.classList.add("active");
 }
 });
+function bukaModal(data) {
+    document.getElementById('modalNama').textContent = data.nama;
+    document.getElementById('modalKategori').textContent = data.kategori;
+    document.getElementById('modalHarga').textContent = data.harga;
+    document.getElementById('modalImg').style.backgroundImage = `url('${data.img}')`;
+    document.getElementById('modalWa').href = data.wa;
+
+    const list = document.getElementById('modalFasilitas');
+    list.innerHTML = '';
+    data.fasilitas.forEach(f => {
+        list.innerHTML += `<li>${f}</li>`;
+    });
+
+    document.getElementById('modalKamar').classList.add('aktif');
+}
+
+function tutupModal() {
+    document.getElementById('modalKamar').classList.remove('aktif');
+}
+
+document.getElementById('modalKamar').addEventListener('click', function(e) {
+    if (e.target === this) tutupModal();
+});
