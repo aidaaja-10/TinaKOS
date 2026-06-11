@@ -52,14 +52,14 @@ main {
     background-color: rgba(55, 119, 121, 0.65);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
     border-radius: 50px;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
     transition: all 0.3s ease;
 }
 
 .page-navbar {
-    background-color: rgba(55, 119, 121, 0.95) !important;
+    background-color: rgba(55, 119, 121, 1) !important;
 }
 
 .navbar .logo {
@@ -184,12 +184,6 @@ main {
     box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
 
-.btn-outline-register:hover {
-    transform: translateY(-4px);
-    background-color: rgba(255, 255, 255, 0.25);
-    border-color: rgba(255, 255, 255, 0.8);
-    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
-}
 
 /* --- STRUCTURE GLOBAL CONTENT & GRID --- */
 .sub-page-container {
@@ -239,64 +233,177 @@ main {
     box-shadow: var(--card-shadow);
     border: 1px solid rgba(55, 119, 121, 0.04);
 }
+/* ==========================================================================
+   CSS SECTON PANDUAN: MINIMALIST TAB SWITCHER
+   ========================================================================== */
 
-/* --- SEKSI PANDUAN (BERDASARKAN GAMBAR REFERENSI) --- */
-.panduan-grid {
-    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)) !important;
-    gap: 20px;
+#panduan {
+    background-color: #fdfbf7; /* Warna dasar krem soft agar clean */
+    padding: 90px 8% 80px;
+    width: 100%;
 }
 
-.card-panduan {
-    flex-direction: column !important;
-    text-align: center;
+.panduan-tab-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1.2fr; /* Membagi halaman Kiri & Kanan */
+    gap: 60px;
     align-items: center;
-    padding: 35px 25px;
 }
 
-.feature-icon-wrapper-circle {
-    background-color: var(--bright-yellow);
-    color: var(--white);
-    border-radius: 50%;
-    width: 70px;
-    height: 70px;
-    font-size: 1.8rem;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-}
-
-.badge-number {
-    position: absolute;
-    top: -5px;
-    right: -5px;
-    background-color: var(--alloy-orange);
-    color: var(--white);
-    border-radius: 50%;
-    width: 24px;
-    height: 24px;
+/* SISI KIRI: INTRO JUDUL */
+#panduan .section-badge {
+    display: inline-block;
+    background-color: rgba(55, 119, 121, 0.1); /* Nuansa Myrtle Green transparan */
+    color: #377779;
+    padding: 6px 16px;
+    border-radius: 30px;
     font-size: 0.8rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: bold;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 15px;
 }
 
-.card-panduan .feature-text {
-    margin-top: 20px;
+.panduan-main-title h2 {
+    font-size: 2.4rem;
+    color: #377779;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 15px;
 }
 
-.card-panduan .feature-text h3 {
-    font-size: 1.2rem;
-    margin-bottom: 12px;
-}
-
-.card-panduan .feature-text p {
-    font-size: 0.9rem;
+.panduan-main-title p {
     color: #7f8c8d;
+    font-size: 1.05rem;
+    line-height: 1.6;
 }
 
+/* SISI KANAN: SISTEM TAB NAVIGATION */
+.panduan-tab-box {
+    width: 100%;
+}
+
+.tab-navigation {
+    display: flex;
+    border-bottom: 1px solid #e2e8f0;
+    margin-bottom: 30px;
+    gap: 10px;
+}
+
+.tab-btn {
+    background: none;
+    border: none;
+    padding: 12px 15px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #94a3b8; /* Abu-abu halus saat tidak aktif */
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    border-bottom: 2px solid transparent;
+}
+
+.tab-btn:hover {
+    color: #377779;
+}
+
+/* Keadaan Tombol Saat Aktif (Garis Bawah Oranye) */
+.tab-btn.active {
+    color: #377779;
+    font-weight: 700;
+    border-bottom: 2px solid #C95D16; /* Oranye khas TinaKOS */
+}
+
+/* KONTEN PENJELASAN PANDUAN */
+.tab-content-wrapper {
+    min-height: 180px; /* Menjaga tinggi agar layout tidak naik-turun */
+}
+
+/* LOGIKA UTAMA SEMBUNYI-MUNCUL */
+.tab-pane {
+    display: none; /* Sembunyikan semua langkah secara bawaan */
+    animation: fadeTabIn 0.4s ease-in-out forwards; /* Efek animasi muncul halus */
+}
+
+.tab-pane.active {
+    display: block; /* Hanya tampilkan langkah yang memiliki kelas active */
+}
+
+@keyframes fadeTabIn {
+    from { opacity: 0; transform: translateY(5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.pane-number {
+    display: inline-block;
+    color: #C95D16;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+}
+
+.tab-pane p {
+    color: #55686a;
+    font-size: 1.05rem;
+    line-height: 1.7;
+    margin-bottom: 25px;
+}
+
+/* TOMBOL AKSI DI DALAM TAB */
+.btn-pane-action {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background-color: #377779;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 10px 24px;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    transition: all 0.2s;
+    box-shadow: 0 4px 12px rgba(55, 119, 121, 0.15);
+}
+
+.btn-pane-action:hover {
+    background-color: #C95D16;
+    box-shadow: 0 4px 12px rgba(201, 93, 22, 0.2);
+}
+
+.btn-pane-action.btn-pane-wa {
+    background-color: #25D366; /* Warna Hijau WA */
+    box-shadow: 0 4px 12px rgba(37, 211, 102, 0.15);
+}
+.btn-pane-action.btn-pane-wa:hover {
+    background-color: #1fba55;
+}
+
+/* LAYAR RESPONSIVE MOBILE SMARTPHONE */
+@media (max-width: 900px) {
+    .panduan-tab-container {
+        grid-template-columns: 1fr; /* Berubah menjadi susunan atas-bawah */
+        gap: 40px;
+    }
+    #panduan {
+        padding: 60px 6% 60px;
+    }
+}
+
+@media (max-width: 600px) {
+    .tab-navigation {
+        overflow-x: auto; /* Menu tab bisa digeser ke samping jika layar HP terlalu sempit */
+        white-space: nowrap;
+        padding-bottom: 5px;
+    }
+    .tab-btn {
+        font-size: 0.85rem;
+        padding: 10px 8px;
+    }
+}
 /* --- FLOATING ELEMENTS & GLOBAL RESPONSIVE --- */
 .floating-wa {
     position: fixed;
