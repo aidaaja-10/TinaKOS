@@ -1,0 +1,482 @@
+/* --- PALET WARNA TINAKOS & RESET --- */
+:root {
+    --alloy-orange: #C95D16;
+    --bright-yellow: #F7AA29;
+    --desert-sand: #E3D1AA;
+    --middle-blue: #7ACDD3;
+    --myrtle-green: #377779;
+    --dark-text: #2c3e50;
+    --light-bg: #fdfbf7;
+    --white: #ffffff;
+    --card-shadow: 0 10px 30px rgba(55, 119, 121, 0.08);
+}
+
+html {
+    scroll-behavior: smooth; /* Efek transisi gulir halus saat menu navbar diklik */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+    background-color: var(--light-bg);
+    color: var(--dark-text);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+main {
+    flex: 1;
+    width: 100%;
+}
+
+/* --- NAVIGATION BAR (FLOATING CAPSULE) --- */
+.navbar {
+    position: fixed;
+    top: 25px;
+    left: 5%;
+    right: 5%;
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 40px;
+    z-index: 1000;
+    
+    background-color: rgba(55, 119, 121, 0.65);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+}
+
+.navbar .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.navbar .logo img {
+    height: 40px;
+    width: 40px;
+    object-fit: contain;
+}
+
+.navbar .logo span {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: var(--white);
+    letter-spacing: -0.5px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.8);
+    margin: 0 18px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    padding-bottom: 4px;
+    border-bottom: 2px solid transparent;
+}
+
+.nav-links a:hover {
+    color: var(--white);
+}
+
+.nav-links a.active {
+    color: var(--bright-yellow);
+    border-bottom: 2px solid var(--bright-yellow);
+}
+
+.nav-auth .btn-login {
+    text-decoration: none;
+    color: var(--white);
+    font-weight: 600;
+    margin-right: 20px;
+    transition: color 0.3s;
+}
+
+.nav-auth .btn-login:hover {
+    color: var(--bright-yellow);
+}
+
+.nav-auth .btn-register {
+    text-decoration: none;
+    background-color: var(--white);
+    color: var(--myrtle-green);
+    padding: 8px 22px;
+    border-radius: 30px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.nav-auth .btn-register:hover {
+    background-color: var(--bright-yellow);
+    color: #1a1a1a;
+    transform: translateY(-1px);
+}
+
+/* --- HERO SECTION (FULL BACKGROUND) --- */
+.hero-section {
+    position: relative;
+    height: 100vh;
+    background: url('../images/kos-depan.jpg') no-repeat center center/cover;
+    background-color: var(--myrtle-green);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--white);
+    width: 100%;
+    overflow: hidden;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(0,0,0,0.2) 0%, rgba(55, 119, 121, 0.75) 100%);
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 850px;
+    padding: 0 24px;
+    margin-top: 60px;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 18px;
+    font-weight: 800;
+    line-height: 1.2;
+    text-shadow: 2px 4px 15px rgba(0,0,0,0.4);
+}
+
+.hero-content p {
+    font-size: 1.3rem;
+    margin-bottom: 35px;
+    color: var(--desert-sand);
+    font-weight: 500;
+    text-shadow: 1px 2px 8px rgba(0,0,0,0.3);
+}
+
+/* --- TOMBOL TUNGGAL TRANSPARAN --- */
+.single-button {
+    display: flex;
+    justify-content: center;
+}
+
+.btn-outline-register {
+    text-decoration: none;
+    padding: 14px 38px;
+    border-radius: 30px;
+    font-weight: 700;
+    font-size: 1.05rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+    
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--white);
+    backdrop-filter: blur(5px);
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.btn-outline-register:hover {
+    transform: translateY(-4px);
+    background-color: rgba(255, 255, 255, 0.25);
+    border-color: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+}
+
+/* --- KEUNGGULAN / FEATURES SECTION --- */
+.features-section {
+    padding: 100px 6% 40px; /* Menambah padding-top agar tidak tertutup navbar melayang */
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-intro {
+    margin-bottom: 40px;
+}
+
+.section-intro h2, .section-title h2 {
+    font-size: 2rem;
+    color: var(--myrtle-green);
+    font-weight: 800;
+    margin-bottom: 10px;
+}
+
+.section-intro p, .section-title p {
+    color: #7f8c8d;
+    font-size: 1.05rem;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+.feature-card {
+    background-color: var(--white);
+    padding: 25px;
+    border-radius: 16px;
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    box-shadow: var(--card-shadow);
+    border: 1px solid rgba(55, 119, 121, 0.04);
+}
+
+.feature-icon-wrapper {
+    background-color: rgba(122, 205, 211, 0.15);
+    color: var(--myrtle-green);
+    padding: 15px;
+    border-radius: 12px;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.feature-text h3 {
+    font-size: 1.15rem;
+    color: var(--dark-text);
+    margin-bottom: 6px;
+    font-weight: 700;
+}
+
+.feature-text p {
+    color: #6a7b7c;
+    font-size: 0.92rem;
+    line-height: 1.4;
+}
+
+/* --- KAMAR PREVIEW SECTION --- */
+.kamar-preview {
+    padding: 100px 6% 80px; /* Menambah padding-top agar tidak tertutup navbar melayang */
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-title {
+    text-align: left;
+    margin-bottom: 40px;
+}
+
+.kamar-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+    gap: 30px;
+}
+
+.kamar-card {
+    background-color: var(--white);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: var(--card-shadow);
+    position: relative;
+    transition: transform 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+    border: 1px solid rgba(0,0,0,0.02);
+}
+
+.kamar-card:hover {
+    transform: translateY(-6px);
+}
+
+.badge-status {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    padding: 6px 14px;
+    border-radius: 30px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--white);
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    z-index: 5;
+}
+
+.badge-status.tersedia {
+    background-color: var(--myrtle-green);
+}
+
+.badge-price {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background-color: rgba(44, 62, 80, 0.75);
+    color: var(--white);
+    padding: 6px 12px;
+    border-radius: 30px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    backdrop-filter: blur(4px);
+    z-index: 5;
+}
+
+.badge-price span {
+    font-size: 0.7rem;
+    font-weight: 400;
+    opacity: 0.8;
+}
+
+.kamar-img {
+    height: 230px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.placeholder-icon {
+    font-size: 3rem;
+    color: rgba(0,0,0,0.15);
+}
+
+.kamar-detail {
+    padding: 25px;
+}
+
+.room-category {
+    font-size: 0.8rem;
+    color: var(--alloy-orange);
+    font-weight: 700;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.kamar-detail h3 {
+    font-size: 1.3rem;
+    color: var(--dark-text);
+    margin-bottom: 15px;
+    font-weight: 800;
+}
+
+.facilities-list {
+    list-style: none;
+    margin-bottom: 25px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.facilities-list li {
+    font-size: 0.85rem;
+    color: #555;
+    background-color: #f0f5f6;
+    padding: 6px 12px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+}
+
+.facilities-list li i {
+    color: var(--myrtle-green);
+    margin-right: 6px;
+}
+
+.btn-card-wa {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    background-color: var(--myrtle-green);
+    color: var(--white);
+    padding: 12px;
+    border-radius: 12px;
+    font-weight: 700;
+    transition: background-color 0.3s ease;
+}
+
+.btn-card-wa:hover {
+    background-color: #27595b;
+}
+
+/* --- FLOATING WA & FOOTER --- */
+.floating-wa {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #25D366;
+    color: var(--white);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    box-shadow: 0 8px 25px rgba(37, 211, 102, 0.3);
+    z-index: 1000;
+    transition: transform 0.3s ease;
+    text-decoration: none;
+}
+
+.floating-wa:hover {
+    transform: scale(1.1);
+}
+
+footer {
+    background-color: var(--myrtle-green);
+    color: var(--white);
+    text-align: center;
+    padding: 40px;
+    font-size: 0.95rem;
+}
+
+/* --- MEDIA QUERY MOBILE RESPONSIVE --- */
+@media (max-width: 992px) {
+    .navbar {
+        padding: 10px 20px;
+        width: 94%;
+        left: 3%;
+        right: 3%;
+    }
+    .nav-links a {
+        margin: 0 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        border-radius: 20px;
+        flex-direction: column;
+        gap: 10px;
+        padding: 15px;
+        top: 15px;
+    }
+    .nav-links {
+        margin: 5px 0;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .hero-content h1 {
+        font-size: 2.2rem;
+    }
+    .hero-section {
+        height: 95vh;
+    }
+}
