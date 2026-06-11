@@ -97,34 +97,13 @@ main {
     border-bottom: 2px solid var(--bright-yellow);
 }
 
-.nav-auth .btn-login {
-    text-decoration: none;
-    color: var(--white);
-    font-weight: 600;
-    margin-right: 20px;
-    transition: color 0.3s;
+.navbar {
+    justify-content: space-between;
 }
-
-.nav-auth .btn-login:hover {
-    color: var(--bright-yellow);
-}
-
-.nav-auth .btn-register {
-    text-decoration: none;
-    background-color: var(--white);
-    color: var(--myrtle-green);
-    padding: 8px 22px;
-    border-radius: 30px;
-    font-weight: 700;
-    font-size: 0.9rem;
-    transition: all 0.3s ease;
-    display: inline-block;
-}
-
-.nav-auth .btn-register:hover {
-    background-color: var(--bright-yellow);
-    color: #1a1a1a;
-    transform: translateY(-1px);
+@media (min-width: 769px) {
+    .nav-links {
+        margin-left: auto; /* Mendorong menu ke sisi kanan dengan rapi */
+    }
 }
 
 /* --- HERO SECTION (FULL BACKGROUND) --- */

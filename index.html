@@ -19,25 +19,119 @@
                 <span>TinaKOS</span>
             </div>
             <nav class="nav-links">
-                <a href="index.html" class="active">Home</a>
-                <a href="tentang.html">Tentang</a>
-                <a href="kamar.html">Kamar</a>
-                <a href="mutu.html">Mutu</a>
-                <a href="kontak.html">Kontak</a>
+                <a href="#home" class="active">Home</a>
+                <a href="#tentang">Tentang</a>
+                <a href="#kamar">Kamar</a>
+                <a href="#mutu">Mutu</a>
+                <a href="#kontak">Kontak</a>
             </nav>
-            <div class="nav-auth">
-                <a href="login.html" class="btn-login">Login</a>
-                <a href="register.html" class="btn-register">Daftar</a>
-            </div>
         </header>
 
         <div class="hero-content">
             <h1>Tinggal Disini Jo, Dijamin Betah Komiu</h1>
             <p>Kos Digital Pertama dan Terpercaya di Kota Palu</p>
             <div class="cta-buttons single-button">
-                <a href="register.html" class="btn-outline-register">
-                    <i class="fa-solid fa-user-plus"></i> Daftar Anggota Sekarang
+                <a href="#kamar" class="btn-outline-register">
+                    <i class="fa-solid fa-bed"></i> Pilih Kamarmu Sekarang
                 </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="features-section" id="tentang">
+        <div class="section-intro">
+            <h2>Tentang TinaKOS</h2>
+            <p>Informasi resmi dan lokasi hunian kos digital Kota Palu.</p>
+        </div>
+        
+        <div class="feature-card" style="flex-direction: column; gap: 15px; background: var(--white); padding: 30px;">
+            <h3><i class="fa-solid fa-map-location-dot" style="color: var(--myrtle-green); margin-right: 10px;"></i> Alamat Lengkap</h3>
+            <p>Jl. [Nama Jalan Anda], Kecamatan [Nama Kecamatan], Kota Palu, Sulawesi Tengah, Indonesia.</p>
+            <hr style="border: 0; border-top: 1px solid #eee; width: 100%; margin: 10px 0;">
+            <h3><i class="fa-solid fa-circle-info" style="color: var(--myrtle-green); margin-right: 10px;"></i> Deskripsi Hunian</h3>
+            <p>TinaKOS hadir memberikan solusi hunian modern, bersih, dan aman di Kota Palu. Dikembangkan dengan sistem digital untuk mempermudah proses manajemen, pemesanan kamar, hingga pembayaran bagi seluruh penghuni kos.</p>
+        </div>
+    </section>
+
+    <section class="kamar-preview" id="kamar">
+        <div class="section-title">
+            <h2>Rekomendasi Kamar Pilihan</h2>
+            <p>Pilih tipe hunian terbaik yang sesuai dengan kebutuhan aktivitasmu.</p>
+        </div>
+        
+        <div class="kamar-grid">
+            <div class="kamar-card">
+                <div class="badge-status tersedia">Tersedia</div>
+                <div class="badge-price">Rp700k <span>/bln</span></div>
+                <div class="kamar-img" style="background-color: var(--desert-sand); background-image: url('assets/images/kamar1.jpg'); background-size: cover; background-position: center;">
+                    <i class="fa-solid fa-image placeholder-icon"></i>
+                </div>
+                <div class="kamar-detail">
+                    <span class="room-category">Tipe Standar</span>
+                    <h3>Kamar A01 (AC)</h3>
+                    <ul class="facilities-list">
+                        <li><i class="fa-solid fa-snowflake"></i> AC</li>
+                        <li><i class="fa-solid fa-wifi"></i> Wi-Fi</li>
+                        <li><i class="fa-solid fa-bath"></i> KM Dalam</li>
+                    </ul>
+                    <a href="https://wa.me/6281234567890" target="_blank" class="btn-card-wa">
+                        <i class="fa-brands fa-whatsapp"></i> Hubungi Ibu Kos
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="features-section" id="mutu">
+        <div class="section-intro">
+            <h2>Kenapa Memilih TinaKOS?</h2>
+            <p>Sistem hunian modern yang memberikan kenyamanan maksimal bagi setiap penyewa.</p>
+        </div>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon-wrapper"><i class="fa-solid fa-bed"></i></div>
+                <div class="feature-text">
+                    <h3>Kamar Siap Huni</h3>
+                    <p>Tersedia 5 unit kamar eksklusif dengan perawatan berkala.</p>
+                </div>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon-wrapper"><i class="fa-solid fa-shield-halved"></i></div>
+                <div class="feature-text">
+                    <h3>Keamanan 24 Jam</h3>
+                    <p>Dilengkapi fasilitas CCTV aktif demi kenyamanan bersama.</p>
+                </div>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon-wrapper"><i class="fa-solid fa-wifi"></i></div>
+                <div class="feature-text">
+                    <h3>High Speed Wi-Fi</h3>
+                    <p>Koneksi internet cepat gratis untuk mendukung tugas & kerjaanmu.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="features-section" style="padding-bottom: 100px;" id="kontak">
+        <div class="section-intro">
+            <h2>Kontak Info</h2>
+            <p>Hubungi pengelola kos untuk pertanyaan lebih lanjut atau survei lokasi.</p>
+        </div>
+        
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon-wrapper"><i class="fa-brands fa-whatsapp"></i></div>
+                <div class="feature-text">
+                    <h3>WhatsApp Ibu Kos</h3>
+                    <p>+62 812-3456-7890</p>
+                </div>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon-wrapper"><i class="fa-solid fa-envelope"></i></div>
+                <div class="feature-text">
+                    <h3>Email Resmi</h3>
+                    <p>info@tinakos.com</p>
+                </div>
             </div>
         </div>
     </section>
@@ -45,6 +139,10 @@
     <a href="https://wa.me/6281234567890" class="floating-wa" target="_blank" title="Hubungi Ibu Kos">
         <i class="fa-brands fa-whatsapp"></i>
     </a>
+
+    <footer>
+        <p>&copy; 2026 TinaKOS. All Rights Reserved. Managed by Ibu Kos.</p>
+    </footer>
 </main>
 
 <script src="assets/js/script.js"></script>
