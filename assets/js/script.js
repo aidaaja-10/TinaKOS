@@ -80,10 +80,84 @@ const dataKamar = {
         nama: 'Kamar A01',
         kategori: 'Tipe Standar',
         harga: 'Rp700.000',
+        status: 'tersedia',
         img: 'assets/images/kos-depan.jpg',
         fasilitas: ['AC', 'Wi-Fi', 'Kamar Mandi Dalam'],
         wa: 'https://wa.me/6281234567890'
-    }
+    },
+    a02: {
+        nama: 'Kamar A02',
+        kategori: 'Tipe Standar',
+        harga: 'Rp700.000',
+        status: 'tersedia',
+        img: 'assets/images/kos-depan.jpg',
+        fasilitas: ['AC', 'Wi-Fi'],
+        wa: 'https://wa.me/6281234567890'
+    },
+    a03: {
+        nama: 'Kamar A03',
+        kategori: 'Tipe Standar',
+        harga: 'Rp700.000',
+        status: 'tidak-tersedia',
+        img: 'assets/images/kos-depan.jpg',
+        fasilitas: ['AC', 'Wi-Fi', 'Kamar Mandi Dalam'],
+        wa: 'https://wa.me/6281234567890'
+    },
+    a04: {
+        nama: 'Kamar A03',
+        kategori: 'Tipe Standar',
+        harga: 'Rp700.000',
+        status: 'tidak-tersedia',
+        img: 'assets/images/kos-depan.jpg',
+        fasilitas: ['AC', 'Wi-Fi', 'Kamar Mandi Dalam'],
+        wa: 'https://wa.me/6281234567890'
+    },
+    a05: {
+        nama: 'Kamar A03',
+        kategori: 'Tipe Standar',
+        harga: 'Rp700.000',
+        status: 'tidak-tersedia',
+        img: 'assets/images/kos-depan.jpg',
+        fasilitas: ['AC', 'Wi-Fi', 'Kamar Mandi Dalam'],
+        wa: 'https://wa.me/6281234567890'
+    },
+    a06: {
+        nama: 'Kamar A03',
+        kategori: 'Tipe Standar',
+        harga: 'Rp700.000',
+        status: 'tidak-tersedia',
+        img: 'assets/images/kos-depan.jpg',
+        fasilitas: ['AC', 'Wi-Fi', 'Kamar Mandi Dalam'],
+        wa: 'https://wa.me/6281234567890'
+    },
+    a07: {
+        nama: 'Kamar A03',
+        kategori: 'Tipe Standar',
+        harga: 'Rp700.000',
+        status: 'tidak-tersedia',
+        img: 'assets/images/kos-depan.jpg',
+        fasilitas: ['AC', 'Wi-Fi', 'Kamar Mandi Dalam'],
+        wa: 'https://wa.me/6281234567890'
+    },
+    a08: {
+        nama: 'Kamar A03',
+        kategori: 'Tipe Standar',
+        harga: 'Rp700.000',
+        status: 'tidak-tersedia',
+        img: 'assets/images/kos-depan.jpg',
+        fasilitas: ['AC', 'Wi-Fi', 'Kamar Mandi Dalam'],
+        wa: 'https://wa.me/6281234567890'
+    },
+    a09: {
+        nama: 'Kamar A03',
+        kategori: 'Tipe Standar',
+        harga: 'Rp700.000',
+        status: 'tidak-tersedia',
+        img: 'assets/images/kos-depan.jpg',
+        fasilitas: ['AC', 'Wi-Fi', 'Kamar Mandi Dalam'],
+        wa: 'https://wa.me/6281234567890'
+    },
+
 };
 
 function bukaModal(idKamar) {
@@ -113,3 +187,34 @@ document.getElementById('modalKamar').addEventListener('click', function(e) {
         tutupModal();
     }
 });
+
+function renderKamar() {
+    const grid = document.querySelector('.kamar-grid');
+    const kartuContoh = document.getElementById('kartu-contoh');
+    if (!grid || !kartuContoh) return;
+
+    Object.entries(dataKamar).forEach(([id, kamar], index) => {
+        let card;
+
+        if (index === 0) {
+            card = kartuContoh;
+        } else {
+            card = kartuContoh.cloneNode(true);
+            card.removeAttribute('id');
+            grid.appendChild(card);
+        }
+
+        const badge = card.querySelector('.badge-status');
+        badge.textContent = kamar.status === 'tersedia' ? 'Tersedia' : 'Tidak Tersedia';
+        badge.className = `badge-status ${kamar.status === 'tersedia' ? 'tersedia' : 'tidak-tersedia'}`;
+
+        card.querySelector('.kamar-img').style.cssText = `background-image:url(${kamar.img});background-size:cover;background-position:center`;
+        card.querySelector('.room-category').textContent = kamar.kategori;
+        card.querySelector('.kamar-nama').textContent = kamar.nama;
+        card.querySelector('.kamar-harga').textContent = kamar.harga;
+        card.querySelector('.btn-card-detail').setAttribute('onclick', `bukaModal('${id}')`);
+        card.querySelector('.btn-card-wa').href = kamar.wa;
+    });
+}
+
+renderKamar();

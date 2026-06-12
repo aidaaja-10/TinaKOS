@@ -797,13 +797,24 @@ main {
     transform: scale(1.1);
 }
 
-footer {
-    background-color: var(--dark-text);
-    color: var(--white);
-    text-align: center;
-    padding: 20px;
-    font-size: 0.9rem;
+.footer-utama {
+    background-color: var(--myrtle-green);
     width: 100%;
+}
+
+.footer-isi {
+    text-align: center;
+    padding: 20px 40px 30px;
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 0.875rem;
+}
+
+.footer-isi p {
+    margin: 4px 0;
+}
+
+.footer-pembuat strong {
+    color: var(--white);
 }
 
 /* Media Responsif */
