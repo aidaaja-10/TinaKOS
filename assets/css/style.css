@@ -604,91 +604,304 @@ main {
 }
 
 /*SECTION KONTAK & MAPS */
-.judul-kontak {
-    text-align: center;
-    margin-bottom: 40px;
+
+.kontak-banner-hijau-v2 {
+    background: linear-gradient(145deg, #1f494b 0%, #377779 60%, #4fa3a6 100%);
+    color: var(--white);
+    padding: 69px 4% 220px 4%;
+    width: 100%;
 }
 
-.judul-kontak h3 {
-    font-size: 2rem;
+.kontak-banner-content-v2 {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-badge-kontak {
+    display: inline-block;
+    background-color: rgba(255, 255, 255, 0.15);
+    color: var(--bright-yellow);
+    padding: 6px 16px;
+    border-radius: 30px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+
+.kontak-banner-content-v2 h1 {
+    font-size: 3.8rem;
     font-weight: 800;
-    margin-bottom: 10px;
-    color: var(--myrtle-green);
+    margin-bottom: 12px;
+    letter-spacing: -1px;
 }
 
-.paragraf-kontak {
-    color: #7f8c8d;
+.kontak-banner-content-v2 p {
+    font-size: 1.1rem;
+    color: var(--desert-sand);
+    line-height: 1.7;
+    max-width: 600px;
+}
+
+/* 2. Container Konten Utama Latar Putih */
+.kontak-main-container-v2 {
+    background-color: var(--light-bg);
+    width: 100%;
+    padding: 0 6% 60px 6%;
+}
+
+.kontak-layout-wrapper-v2 {
+    max-width: 1200px;
+    margin: -140px auto 0 auto; /* Diperbaiki: Ditambahkan satuan px agar valid */
+    display: grid;
+    grid-template-columns: 1.45fr 0.55fr; 
+    gap: 35px;
+    align-items: stretch; 
+}
+
+/* Kolom Kiri: Informasi Kontak */
+.kontak-info-left-v2 {
+    padding-top: 0; /* Diperbaiki: Spasi kosong antara angka dan px dihilangkan */
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-between; 
+}
+
+.kontak-info-title-v2 h2 {
+    font-size: 1.8rem;
+    color: var(--dark-text);
+    font-weight: 800;
+    margin-bottom: 8px;
+}
+
+.kontak-info-title-v2 p {
     font-size: 0.95rem;
+    color: #7f8c8d;
+    margin-bottom: 30px;
 }
 
-.info-kontak {
+/* Area Grid 3 Kolom Menyamping */
+.kontak-grid-vertikal-v2 {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
-    max-width: 800px;
-    margin: 0 auto 50px;
+    width: 100%;
+    flex-grow: 1; 
+    margin-top: 20px;
 }
 
-.item-kontak {
+/* Komponen Kartu Informasi Kontak */
+.card-info-kontak-v2 {
+    background: var(--white);
+    padding: 30px 20px;
+    border-radius: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; 
+    box-shadow: var(--card-shadow);
+    border: 1px solid rgba(55, 119, 121, 0.05);
+    transition: transform 0.3s ease;
+    height: 230px; 
+}
+
+.card-info-kontak-v2:hover {
+    transform: translateY(-5px);
+}
+
+.icon-lingkaran-v2 {
+    width: 50px;
+    height: 50px;
+    background-color: rgba(55, 119, 121, 0.1);
+    color: var(--myrtle-green);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    flex-shrink: 0;
+    margin-bottom: 15px;
+}
+
+.card-text-v2 {
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    gap: 8px;
 }
 
-.icon-kontak {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    background-color: rgba(55, 119, 121, 0.12);
+.label-info-v2 {
+    font-size: 0.78rem;
+    color: var(--alloy-orange);
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+}
+
+.card-text-v2 h3 {
+    font-size: 1.2rem; /* Diperbaiki: Spasi kosong dihilangkan */
+    color: var(--dark-text);
+    font-weight: 700;
+    margin-bottom: 4px;
+    width: 100%;
+    word-wrap: break-word;
+}
+
+.card-text-v2 p {
+    font-size: 0.88rem;
+    color: #64748b;
+    line-height: 1.5;
+    margin-top: 5px;
+}
+
+/* Kolom Kanan: Tempat Gambar Kubah Super Panjang */
+.kontak-image-right-v2 {
+    position: relative;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.4rem;
-    color: #377779;
+    justify-content: flex-end;
+}
+
+.kontak-arch-superlong-v2 {
+    width: 100%;
+    max-width: 400px;
+    height: 500px; 
+    background-size: cover;
+    background-position: center;
+    border-top-left-radius: 220px;
+    border-top-right-radius: 220px;
+    border: 7px solid var(--white);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+    
+    /* Menarik foto melompat naik menembus area hijau */
+    margin-top: -250px; 
+    position: relative;
+    z-index: 10;
+}
+
+/* 3. Bagian Peta (Maps) Lebar Penuh */
+.kontak-maps-section-v2 {
+    padding: 20px 6% 80px 6%;
+
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.kontak-maps-title-v2 h2 {
+    font-size: 1.8rem;
+    color: var(--dark-text);
+    font-weight: 800;
     margin-bottom: 8px;
 }
 
-.judul-info {
-    font-size: 1rem;
-    font-weight: 700;
-    color: var(--dark-text);
+.kontak-maps-title-v2 a {
+    color: var(--myrtle-green);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    display: inline-block;
+    margin-bottom: 25px;
 }
 
-.isi-info {
-    font-size: 0.9rem;
-    color: #7f8c8d;
+.kontak-maps-title-v2 a:hover {
+    color: var(--alloy-orange);
 }
 
-.peta-kontak {
-    max-width: 900px;
-    margin: 0 auto;
+.kontak-iframe-wrapper-v2 {
+    width: 100%;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: var(--card-shadow);
+    margin-bottom: 40px;
+    border: 1px solid rgba(0,0,0,0.05);
+}
+
+.kontak-iframe-wrapper-v2 iframe {
+    width: 100%;
+    height: 450px;
+    display: block;
+    border: 0;
+}
+
+.maps-memanjang-img-v2 {
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+    display: block;
+}
+
+/* Media Sosial */
+.kontak-sosmed-wrapper-v2 {
     text-align: center;
 }
 
-.peta-kontak h3 {
-    font-size: 1.3rem;
-    font-weight: 700;
-    margin-bottom: 15px;
+.kontak-sosmed-wrapper-v2 h3 {
+    font-size: 1.2rem;
     color: var(--dark-text);
-    text-align: left;
-}
-
-.peta-kontak a {
-    display: block;
-    text-align: left;
-    color: var(--alloy-orange);
     margin-bottom: 15px;
-    text-decoration: none;
-    font-weight: 600;
+    font-weight: 700;
 }
 
-.peta-kontak img {
-    width: 100%;
-    max-height: 400px;
-    object-fit: cover;
-    border-radius: 20px;
+.sosmed-icons-v2 {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.sosmed-icons-v2 a {
+    width: 45px;
+    height: 45px;
+    background-color: var(--myrtle-green);
+    color: var(--white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.sosmed-icons-v2 a:hover {
+    background-color: var(--bright-yellow);
+    color: var(--dark-text);
+    transform: scale(1.1);
+}
+
+@media (max-width: 992px) {
+    .kontak-banner-hijau-v2 {
+        padding-bottom: 80px;
+        text-align: center;
+    }
+    .kontak-layout-wrapper-v2 {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        align-items: start;
+    }
+    .kontak-image-right-v2 {
+        justify-content: center;
+        order: -1; 
+    }
+    .kontak-arch-superlong-v2 {
+        margin-top: -100px;
+        height: 450px;
+        max-width: 100%;
+    }
+    .kontak-info-left-v2 {
+        padding-top: 10px;
+        text-align: center;
+    }
+    .kontak-grid-vertikal-v2 {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    .card-info-kontak-v2 {
+        padding: 30px 20px;
+        height: auto;
+    }
+
+    
 }
 
 /* POP-UP DETAIL KAMAR*/
