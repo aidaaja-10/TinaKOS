@@ -78,84 +78,84 @@ window.addEventListener("scroll", () => {
 const dataKamar = {
     a01: {
         nama: 'Kamar A01',
-        kategori: 'Tipe Standar',
-        harga: 'Rp700.000',
+        kategori: 'Tipe Eksklusif',
+        harga: 'Rp1.200.000',
         status: 'tersedia',
-        img: 'assets/images/kos-depan.jpg',
-        fasilitas: ['AC', 'Wi-Fi', 'Kamar Mandi Dalam'],
-        wa: 'https://wa.me/6281234567890'
+        img: 'assets/images/kost-2kamar.jpeg',
+        fasilitas: ['Wi-Fi', '2 kamar', 'set dapur lengkap','lemari'],
+        wa: 'https://wa.me/6285256675414'
     },
     a02: {
         nama: 'Kamar A02',
-        kategori: 'Tipe Standar',
-        harga: 'Rp700.000',
+        kategori: 'Tipe Eksklusif',
+        harga: 'Rp1.200.000',
         status: 'tersedia',
-        img: 'assets/images/kos-depan.jpg',
-        fasilitas: ['AC', 'Wi-Fi'],
-        wa: 'https://wa.me/6281234567890'
+        img: 'assets/images/kost-2kamar.jpeg',
+        fasilitas: ['Wi-Fi', '2 kamar', 'set dapur lengkap', 'lemari'],
+        wa: 'https://wa.me/6285256675414'
     },
     a03: {
         nama: 'Kamar A03',
-        kategori: 'Tipe Standar',
-        harga: 'Rp700.000',
-        status: 'tidak-tersedia',
-        img: 'assets/images/kos-depan.jpg',
-        fasilitas: ['AC', 'Wi-Fi', 'Kamar Mandi Dalam'],
-        wa: 'https://wa.me/6281234567890'
+        kategori: 'Tipe Eksklusif',
+        harga: 'Rp1.200.000',
+        status: 'tersedia',
+        img: 'assets/images/kost-2kamar.jpeg',
+        fasilitas: ['Wi-Fi', '2 kamar', 'set dapur lengkap','lemari'],
+        wa: 'https://wa.me/6285256675414'
     },
-    a04: {
-        nama: 'Kamar A03',
+    b01: {
+        nama: 'Kamar B01',
         kategori: 'Tipe Standar',
-        harga: 'Rp700.000',
-        status: 'tidak-tersedia',
-        img: 'assets/images/kos-depan.jpg',
-        fasilitas: ['AC', 'Wi-Fi', 'Kamar Mandi Dalam'],
-        wa: 'https://wa.me/6281234567890'
+        harga: 'Rp800.000',
+        status: 'tersedia',
+        img: 'assets/images/kamar1.jpeg',
+        fasilitas: ['Wi-Fi', '1 kamar'],
+        wa: 'https://wa.me/6285256675414'
     },
-    a05: {
-        nama: 'Kamar A03',
+    b02: {
+        nama: 'Kamar B02',
         kategori: 'Tipe Standar',
-        harga: 'Rp700.000',
-        status: 'tidak-tersedia',
-        img: 'assets/images/kos-depan.jpg',
-        fasilitas: ['AC', 'Wi-Fi', 'Kamar Mandi Dalam'],
-        wa: 'https://wa.me/6281234567890'
+        harga: 'Rp800.000',
+        status: 'tersedia',
+        img: 'assets/images/kamar1.jpeg',
+        fasilitas: ['Wi-Fi', '1 kamar'],
+        wa: 'https://wa.me/6285256675414'
     },
-    a06: {
-        nama: 'Kamar A03',
+    b03: {
+        nama: 'Kamar B03',
         kategori: 'Tipe Standar',
-        harga: 'Rp700.000',
-        status: 'tidak-tersedia',
-        img: 'assets/images/kos-depan.jpg',
-        fasilitas: ['AC', 'Wi-Fi', 'Kamar Mandi Dalam'],
-        wa: 'https://wa.me/6281234567890'
+        harga: 'Rp800.000',
+        status: 'tersedia',
+        img: 'assets/images/kamar1.jpeg',
+        fasilitas: ['Wi-Fi', '1 kamar'],
+        wa: 'https://wa.me/6285256675414'
     },
-    a07: {
-        nama: 'Kamar A03',
+    b04: {
+        nama: 'Kamar B04',
         kategori: 'Tipe Standar',
-        harga: 'Rp700.000',
-        status: 'tidak-tersedia',
-        img: 'assets/images/kos-depan.jpg',
-        fasilitas: ['AC', 'Wi-Fi', 'Kamar Mandi Dalam'],
-        wa: 'https://wa.me/6281234567890'
+        harga: 'Rp800.000',
+        status: 'tersedia',
+        img: 'assets/images/kamar1.jpeg',
+        fasilitas: ['Wi-Fi', '1 kamar'],
+        wa: 'https://wa.me/6285256675414'
     },
-    a08: {
-        nama: 'Kamar A03',
+    b05: {
+        nama: 'Kamar B05',
         kategori: 'Tipe Standar',
-        harga: 'Rp700.000',
-        status: 'tidak-tersedia',
-        img: 'assets/images/kos-depan.jpg',
-        fasilitas: ['AC', 'Wi-Fi', 'Kamar Mandi Dalam'],
-        wa: 'https://wa.me/6281234567890'
+        harga: 'Rp800.000',
+        status: 'tersedia',
+        img: 'assets/images/kamar1.jpeg',
+        fasilitas: ['Wi-Fi', '1 kamar'],
+        wa: 'https://wa.me/6285256675414'
     },
-    a09: {
-        nama: 'Kamar A03',
+    b06: {
+        nama: 'Kamar B06',
         kategori: 'Tipe Standar',
-        harga: 'Rp700.000',
-        status: 'tidak-tersedia',
-        img: 'assets/images/kos-depan.jpg',
-        fasilitas: ['AC', 'Wi-Fi', 'Kamar Mandi Dalam'],
-        wa: 'https://wa.me/6281234567890'
+        harga: 'Rp800.000',
+        status: 'tersedia',
+        img: 'assets/images/kamar1.jpeg',
+        fasilitas: ['Wi-Fi', '1 kamar'],
+        wa: 'https://wa.me/6285256675414'
     },
 
 };
