@@ -1,4 +1,4 @@
-/* PALET WARNA TINAKOS  */
+/* PALET WARNA */
 :root {
     --alloy-orange: #C95D16;
     --bright-yellow: #F7AA29;
@@ -11,15 +11,16 @@
     --card-shadow: 0 10px 30px rgba(55, 119, 121, 0.08);
 }
 
-html {
-    scroll-behavior: smooth;
-}
-
+/* DASAR HALAMAN */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
@@ -36,7 +37,17 @@ main {
     width: 100%;
 }
 
-/*NAVIGATION BAR */
+/* KONTROL  HALAMAN  */
+.halaman-wrapper {
+    display: none; 
+    width: 100%;
+}
+
+#halaman-beranda {
+    display: block; 
+}
+
+/* NAVIGATION BAR */
 .navbar {
     position: fixed;
     top: 25px;
@@ -169,12 +180,13 @@ main {
 
 .btn-outline-register {
     text-decoration: none;
-    padding: 14px 38px;
+    padding: 10px 24px !important; 
     border-radius: 30px;
     font-weight: 700;
-    font-size: 1.05rem;
+    font-size: 0.95rem !important; 
     display: inline-flex;
     align-items: center;
+    justify-content: center;
     gap: 10px;
     transition: all 0.3s ease;
     background-color: rgba(255, 255, 255, 0.1);
@@ -184,59 +196,24 @@ main {
     box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
 
-
-.sub-page-container {
-    margin-top: 140px;
-    padding-bottom: 80px;
+.btn-outline-register:hover {
+    background-color: var(--white);
+    color: var(--myrtle-green);
 }
 
-.features-section {
-    padding: 60px 6% 40px;
-    max-width: 1200px;
-    margin: 0 auto;
+/* TATA LETAK UMUM & SECTIONS */
+.section-padding {
+    padding: 100px 6% 80px;
 }
 
-.section-intro {
+.section-title {
+    text-align: center;
     margin-bottom: 40px;
 }
 
-.text-center {
-    text-align: center;
-}
-
-.section-intro h2 {
-    font-size: 2rem;
-    color: var(--myrtle-green);
-    font-weight: 800;
-    margin-bottom: 10px;
-}
-
-.section-intro p {
-    color: #7f8c8d;
-    font-size: 1.05rem;
-}
-
-.features-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 25px;
-}
-
-.feature-card {
-    background-color: var(--white);
-    padding: 25px;
-    border-radius: 16px;
-    display: flex;
-    align-items: flex-start;
-    gap: 20px;
-    box-shadow: var(--card-shadow);
-    border: 1px solid rgba(55, 119, 121, 0.04);
-}
-/* CSS SECTON PANDUAN: MINIMALIST TAB SWITCHER */
-
+/*SECTION PANDUAN*/
 #panduan {
     background-color: #fdfbf7; 
-    padding: 90px 8% 80px;
     width: 100%;
 }
 
@@ -280,124 +257,6 @@ main {
     width: 100%;
 }
 
-/* Kamar */
-.kamar-preview {
-    padding: 100px 6% 80px; 
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.section-title {
-    text-align: center;
-    margin-bottom: 40px;
-}
-
-.kamar-grid {
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
-    gap: 30px;
-}
-
-.kamar-card {
-    background-color: white;
-    border-radius: 20px;
-    overflow: visible;
-    box-shadow: var(--card-shadow);
-    position: relative;
-    transition: transform 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
-    border: 1px solid rgba(0,0,0,0.02);
-}
-
-.kamar-card:hover {
-    transform: translateY(-6px);
-}
-
-.badge-status {
-    position: absolute;
-    top: 15px;
-    left: 15px;
-    padding: 6px 14px;
-    border-radius: 30px;
-    font-size: 0.75rem;
-    font-weight: 700;
-    color: var(--white);
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
-    z-index: 5;
-}
-
-.badge-status.tersedia {
-    background-color: var(--myrtle-green);
-}
-
-.badge-price {
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    background-color: rgba(44, 62, 80, 0.75);
-    color: var(--white);
-    padding: 6px 12px;
-    border-radius: 30px;
-    font-size: 0.85rem;
-    font-weight: 700;
-    backdrop-filter: blur(4px);
-    z-index: 5;
-}
-
-.badge-price span {
-    font-size: 0.7rem;
-    font-weight: 400;
-    opacity: 0.8;
-}
-
-.kamar-img {
-    height: 230px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
-}
-
-.placeholder-icon {
-    font-size: 3rem;
-    color: rgba(0,0,0,0.15);
-}
-
-.kamar-detail {
-    padding: 25px;
-}
-
-.room-category {
-    font-size: 0.8rem;
-    color: var(--alloy-orange);
-    font-weight: 700;
-    text-transform: uppercase;
-    display: block;
-    margin-bottom: 5px;
-}
-
-.kamar-detail h3 {
-    font-size: 1rem;
-    color: var(--dark-text);
-    margin-bottom: 2px;
-    
-}
-
-.kamar-detail strong {
-    font-size: 1.5rem;
-    color: var(--dark-text);
-    margin-bottom: 15px;
-    font-weight: 700;  
-}
-
-.kamar-detail small {
-    margin-bottom: 15px;
-    font-size: 1rem;
-}
-
-
 .tab-navigation {
     display: flex;
     border-bottom: 1px solid #e2e8f0;
@@ -431,7 +290,6 @@ main {
 .tab-content-wrapper {
     min-height: 180px; 
 }
-
 
 .tab-pane {
     display: none; 
@@ -485,92 +343,97 @@ main {
 }
 
 .btn-pane-action.btn-pane-wa {
-    background-color: #25D366; /* Warna Hijau WA */
+    background-color: #25D366;
     box-shadow: 0 4px 12px rgba(37, 211, 102, 0.15);
 }
+
 .btn-pane-action.btn-pane-wa:hover {
     background-color: #1fba55;
 }
 
-@media (max-width: 900px) {
-    .panduan-tab-container {
-        grid-template-columns: 1fr; 
-        gap: 40px;
-    }
-    #panduan {
-        padding: 60px 6% 60px;
-    }
+/*GRID CARD KAMAR (PREVIEW & DAFTAR PENUH)*/
+.kamar-preview, .sec-daftarKamar {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
 }
 
-@media (max-width: 600px) {
-    .tab-navigation {
-        overflow-x: auto; 
-        white-space: nowrap;
-        padding-bottom: 5px;
-    }
-    .tab-btn {
-        font-size: 0.85rem;
-        padding: 10px 8px;
-    }
+.kamar-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
 }
-/* WA*/
-.floating-wa {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    background-color: #25D366;
+
+.kamar-card {
+    background-color: white;
+    border-radius: 20px;
+    overflow: visible;
+    box-shadow: var(--card-shadow);
+    position: relative;
+    transition: transform 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+    border: 1px solid rgba(0,0,0,0.02);
+}
+
+.kamar-card:hover {
+    transform: translateY(-6px);
+}
+
+.badge-status {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    padding: 6px 14px;
+    border-radius: 30px;
+    font-size: 0.75rem;
+    font-weight: 700;
     color: var(--white);
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    z-index: 5;
+}
+
+.badge-status.tersedia {
+    background-color: var(--myrtle-green);
+}
+
+.kamar-img {
+    height: 230px;
     display: flex;
-    align-items: center;
     justify-content: center;
-    font-size: 30px;
-    box-shadow: 0 8px 25px rgba(37, 211, 102, 0.3);
-    z-index: 1000;
-    transition: transform 0.3s ease;
-    text-decoration: none;
+    align-items: center;
+    position: relative;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
 }
 
-.floating-wa:hover {
-    transform: scale(1.1);
+.kamar-detail {
+    padding: 25px;
 }
 
-@media (max-width: 992px) {
-    .navbar {
-        padding: 10px 20px;
-        width: 94%;
-        left: 3%;
-        right: 3%;
-    }
-    .nav-links a {
-        margin: 0 10px;
-    }
+.room-category {
+    font-size: 0.8rem;
+    color: var(--alloy-orange);
+    font-weight: 700;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 5px;
 }
 
-@media (max-width: 768px) {
-    .navbar {
-        border-radius: 20px;
-        flex-direction: column;
-        gap: 10px;
-        padding: 15px;
-        top: 15px;
-    }
-    .nav-links {
-        margin: 5px 0;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-    .hero-content h1 {
-        font-size: 2.2rem;
-    }
-    .hero-section {
-        height: 95vh;
-    }
-    .sub-page-container {
-        margin-top: 180px;
-    }
+.kamar-detail h3 {
+    font-size: 1.2rem;
+    color: var(--dark-text);
+    margin-bottom: 5px;
+}
+
+.kamar-detail strong {
+    font-size: 1.5rem;
+    color: var(--dark-text);
+    font-weight: 700;  
+}
+
+.kamar-detail small {
+    font-size: 1rem;
+    color: #7f8c8d;
 }
 
 .btn-card-group {
@@ -581,8 +444,9 @@ main {
 }
 
 .btn-card-detail {
-    display: block;
-    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-decoration: none;
     background-color: transparent;
     color: var(--myrtle-green);
@@ -598,97 +462,10 @@ main {
     color: var(--white);
 }
 
-.modal-overlay {
-    display: none;
-    position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,0.5);
-    z-index: 2000;
+.btn-card-wa {
+    display: flex;
     align-items: center;
     justify-content: center;
-}
-
-.modal-overlay.aktif {
-    display: flex;
-}
-
-.modal-card {
-    background: var(--white);
-    border-radius: 20px;
-    width: 90%;
-    max-width: 800px;
-    overflow: hidden;
-    position: relative;
-    display: flex;
-    flex-direction: row;
-}
-
-.modal-close {
-    position: absolute;
-    top: 12px;
-    right: 12px;
-    background: rgba(0,0,0,0.4);
-    color: var(--white);
-    border: none;
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-    cursor: pointer;
-    font-size: 1rem;
-    z-index: 10;
-}
-
-.modal-img {
-    width: 45%;
-    background-color: var(--desert-sand);
-    background-size: cover;
-    background-position: center;
-}
-
-.modal-body {
-    padding: 25px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.facilities-list li {
-    font-size: 0.85rem;
-    color: #555;
-    background-color: #f0f5f6;
-    padding: 6px 14px;
-    border-radius: 20px;
-    display: flex;
-    align-items: center;
-    font-weight: 600;
-    list-style: none;
-}
-
-.facilities-list {
-    list-style: none;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-}
-
-
-.modal-body .btn-card-wa {
-    width: 100%;
-    margin-top: 15px;
-    padding: 8px;
-    text-align: center;
-    font-size: 1rem;
-    display: block;        
-    text-decoration: none; 
-    background-color: var(--myrtle-green); 
-    color: var(--white);   
-    border-radius: 12px;   
-    font-weight: 700;      
-}
-
-.btn-card-wa {
-    display: block;
-    text-align: center;
     text-decoration: none;
     background-color: var(--myrtle-green);
     color: white;
@@ -702,24 +479,18 @@ main {
     background-color: #27595b;
 }
 
-.sec-daftarKamar {
-    padding: 100px 6% 80px;
-}
-
-/* CSS Bagian Mutu*/
-
+/* MUTU / KUALITAS*/
 .mutu-banner-section {
     background-color: #ffffff; 
     padding: 60px 0 100px 0;
     width: 100%;
-    box-sizing: border-box;
 }
 
 .mutu-top-green-banner {
     background-color: var(--myrtle-green);
     max-width: 1140px; 
     margin: 0 auto; 
-    padding: 50px 4% 120px 4%; /* Jarak vertikal diperketat agar pas dan tidak kosong */
+    padding: 50px 4% 120px 4%;
     text-align: center;
     border-radius: 24px; 
     box-shadow: 0 10px 30px rgba(55, 119, 121, 0.15);
@@ -765,7 +536,6 @@ main {
     gap: 20px;
     position: relative;
     z-index: 10;
-    box-sizing: border-box;
 }
 
 .mutu-hanging-card {
@@ -833,21 +603,7 @@ main {
     line-height: 1.5;
 }
 
-@media (max-width: 992px) {
-    .mutu-banner-section {
-        padding: 40px 20px 60px 20px;
-    }
-    .mutu-top-green-banner {
-        padding: 40px 20px 90px 20px;
-    }
-    .mutu-hanging-container {
-        grid-template-columns: 1fr;
-        margin-top: -65px;
-        gap: 25px;
-        padding: 0;
-    }
-}
-
+/*SECTION KONTAK & MAPS */
 .judul-kontak {
     text-align: center;
     margin-bottom: 40px;
@@ -857,6 +613,7 @@ main {
     font-size: 2rem;
     font-weight: 800;
     margin-bottom: 10px;
+    color: var(--myrtle-green);
 }
 
 .paragraf-kontak {
@@ -883,8 +640,7 @@ main {
 .icon-kontak {
     width: 60px;
     height: 60px;
-    border-top-left-radius: 40%;
-    border-top-right-radius: 40%;
+    border-radius: 50%;
     background-color: rgba(55, 119, 121, 0.12);
     display: flex;
     align-items: center;
@@ -897,7 +653,7 @@ main {
 .judul-info {
     font-size: 1rem;
     font-weight: 700;
-    color: #2c3e50;
+    color: var(--dark-text);
 }
 
 .isi-info {
@@ -908,12 +664,223 @@ main {
 .peta-kontak {
     max-width: 900px;
     margin: 0 auto;
+    text-align: center;
 }
 
 .peta-kontak h3 {
     font-size: 1.3rem;
     font-weight: 700;
     margin-bottom: 15px;
-    color: #2c3e50;
+    color: var(--dark-text);
+    text-align: left;
 }
 
+.peta-kontak a {
+    display: block;
+    text-align: left;
+    color: var(--alloy-orange);
+    margin-bottom: 15px;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.peta-kontak img {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+/* POP-UP DETAIL KAMAR*/
+.modal-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+    z-index: 2000;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-overlay.aktif {
+    display: flex;
+}
+
+.modal-card {
+    background: var(--white);
+    border-radius: 20px;
+    width: 90%;
+    max-width: 800px;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+}
+
+.modal-close {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: rgba(0,0,0,0.4);
+    color: var(--white);
+    border: none;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1rem;
+    z-index: 10;
+}
+
+.modal-img {
+    width: 45%;
+    background-color: var(--desert-sand);
+    background-size: cover;
+    background-position: center;
+}
+
+.modal-body {
+    width: 55%;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.facilities-list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.facilities-list li {
+    font-size: 0.85rem;
+    color: #555;
+    background-color: #f0f5f6;
+    padding: 6px 14px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+}
+
+.modal-body .btn-card-wa {
+    width: 100%;
+    margin-top: 15px;
+    padding: 12px;
+    border-radius: 12px;
+}
+
+/* Wa*/
+.floating-wa {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #25D366;
+    color: var(--white);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    box-shadow: 0 8px 25px rgba(37, 211, 102, 0.3);
+    z-index: 1000;
+    transition: transform 0.3s ease;
+    text-decoration: none;
+}
+
+.floating-wa:hover {
+    transform: scale(1.1);
+}
+
+footer {
+    background-color: var(--dark-text);
+    color: var(--white);
+    text-align: center;
+    padding: 20px;
+    font-size: 0.9rem;
+    width: 100%;
+}
+
+/* Media Responsif */
+@media (max-width: 992px) {
+    .navbar {
+        padding: 10px 20px;
+        width: 94%;
+        left: 3%;
+        right: 3%;
+    }
+    .nav-links a {
+        margin: 0 10px;
+    }
+    .kamar-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .mutu-banner-section {
+        padding: 40px 20px 60px 20px;
+    }
+    .mutu-top-green-banner {
+        padding: 40px 20px 90px 20px;
+    }
+    .mutu-hanging-container {
+        grid-template-columns: 1fr;
+        margin-top: -65px;
+        gap: 25px;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        border-radius: 20px;
+        flex-direction: column;
+        gap: 10px;
+        padding: 15px;
+        top: 15px;
+    }
+    .nav-links {
+        margin: 5px 0;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .hero-content h1 {
+        font-size: 2.2rem;
+    }
+    .hero-section {
+        height: 95vh;
+    }
+    .panduan-tab-container {
+        grid-template-columns: 1fr; 
+        gap: 40px;
+    }
+    .kamar-grid, .info-kontak {
+        grid-template-columns: 1fr;
+    }
+    .modal-card {
+        flex-direction: column;
+        max-height: 90vh;
+        overflow-y: auto;
+    }
+    .modal-img {
+        width: 100%;
+        height: 200px;
+    }
+    .modal-body {
+        width: 100%;
+    }
+}
+
+@media (max-width: 600px) {
+    .tab-navigation {
+        overflow-x: auto; 
+        white-space: nowrap;
+        padding-bottom: 5px;
+    }
+    .tab-btn {
+        font-size: 0.85rem;
+        padding: 10px 8px;
+    }
+}

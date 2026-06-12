@@ -10,296 +10,261 @@
 <body>
 <main>
     
-    <section class="hero-section" id="home">
-        <div class="hero-overlay"></div>
-
-        <header class="navbar">
-            <div class="logo">
-                <img src="assets/images/logo-tinakos5.png" alt="Logo TinaKOS">
-                <span>TinaKOS</span>
-            </div>
-            <nav class="nav-links">
-                <a href="#home" class="active" onclick="kembaliHome()">Home</a>
-                <a href="#panduan" onclick="kembaliHome()">Panduan</a>
-                <a href="#kamar" onclick="kembaliHome()">Kamar</a>
-                <a href="#mutu" onclick="kembaliHome()">Mutu</a>
-                <a href="#kontak" onclick="kembaliHome()">Kontak</a>
-            </nav>
-        </header>
-
-        <div class="hero-content">
-            <h1>Tinggal Disini Jo, Dijamin Betah Komiu</h1>
-            <p>Kos Digital Pertama dan Terpercaya di Kota Palu</p>
-            <div class="cta-buttons single-button">
-                <a href="#kamar" class="btn-outline-register">
-                    <i class="fa-solid fa-bed"></i> Pilih Kamarmu Sekarang
-                </a>
-            </div>
+    <header class="navbar">
+        <div class="logo">
+            <img src="assets/images/logo-tinakos5.png" alt="Logo TinaKOS">
+            <span>TinaKOS</span>
         </div>
-    </section>
+        <nav class="nav-links">
+            <a href="#home" class="active" onclick="bukaHalaman('beranda')">Beranda</a>
+            <a href="#kamar" onclick="bukaHalaman('kamarpage')">Kamar</a>
+            <a href="#kontak" onclick="bukaHalaman('kontakpage')">Kontak</a>
+        </nav>
+    </header>
 
-    <section class="features-section section-padding" id="panduan">
-        <div class="panduan-tab-container">
-            
-            <div class="panduan-main-title">
-                <span class="section-badge">Alur Hunian</span>
-                <h2>4 Langkah Mudah <br>Tinggal di TinaKOS</h2>
-                <p>Ikuti panduan praktis berikut untuk mulai menikmati hunian kos digital terbaik di Kota Palu.</p>
-            </div>
-
-            <div class="panduan-tab-box">
-                <div class="tab-navigation">
-                    <button class="tab-btn active" onclick="bukaLangkah(event, 'langkah1')">Pilih Kamar</button>
-                    <button class="tab-btn" onclick="bukaLangkah(event, 'langkah2')">Hubungi Ibu Kos</button>
-                    <button class="tab-btn" onclick="bukaLangkah(event, 'langkah3')">Bayar Sewa</button>
-                    <button class="tab-btn" onclick="bukaLangkah(event, 'langkah4')">Siap Huni</button>
+    <div id="halaman-beranda" class="halaman-wrapper">
+        <section class="hero-section" id="home">
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <h1>Tinggal Disini Jo, Dijamin Betah Komiu</h1>
+                <p>Kos Digital Pertama dan Terpercaya di Kota Palu</p>
+                <div class="cta-buttons single-button">
+                    <a href="#kamar" class="btn-outline-register" onclick="bukaHalaman('kamarpage')">
+                        <span>Pilih Kamarmu Sekarang</span> 
+                    </a>
                 </div>
-
-                <div class="tab-content-wrapper">
-                    
-                    <div class="tab-pane active" id="langkah1">
-                        <span class="pane-number">Langkah 01</span>
-                        <p>Jelajahi rekomendasi pilihan kamar terbaik kami langsung di halaman utama website ini. Sesuaikan tipe kamar dengan fasilitas penunjang yang Komiu butuhkan seperti AC, Wifi, atau kamar mandi dalam.</p>
-                        <a href="#kamar" class="btn-pane-action">Lihat Kamar Pilihan <i class="fa-solid fa-arrow-right"></i></a>
-                    </div>
-
-                    <div class="tab-pane" id="langkah2">
-                        <span class="pane-number">Langkah 02</span>
-                        <p>Konfirmasi unit kamar pilihan Komiu secara instan atau atur jadwal survei lokasi langsung bersama Ibu Kos. Cukup klik tombol WhatsApp untuk memulai obrolan hangat.</p>
-                        <a href="https://wa.me/6281234567890" target="_blank" class="btn-pane-action btn-pane-wa">Hubungi via WhatsApp <i class="fa-brands fa-whatsapp"></i></a>
-                    </div>
-
-                    <div class="tab-pane" id="langkah3">
-                        <span class="pane-number">Langkah 03</span>
-                        <p>Selesaikan transaksi pembayaran sewa secara aman, cepat, dan transparan melalui sistem manajemen digital kami. Anda akan menerima nota digital resmi sebagai bukti transaksi yang sah.</p>
-                    </div>
-
-                    <div class="tab-pane" id="langkah4">
-                        <span class="pane-number">Langkah 04</span>
-                        <p>Selamat bergabung! Serah terima kunci fisik atau kode akses kamar akan diproses langsung oleh pengelola kos. Kamar rapi, bersih, dan nyaman siap menyambut kedatangan harian Komiu.</p>
-                    </div>
-
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <section class="sec-daftarKamar" id="daftarkamar" style="display: none;">
-        <div class="section-title">
-            <h2>Daftar Kamar TinaKOS</h2>
-            <p>Pilih kamar sesuai seleranya komiu.</p>
-        </div>
-        
-        <div class="kamar-grid">
-            <div class="kamar-card">
-                <div class="badge-status tersedia">Tersedia</div>
-                <div class="kamar-img" style=" background-image: url(assets/images/kos-depan.jpg); background-size: cover; background-position: center;"></div>
-               
-                <div class="kamar-detail">
-                    <span class="room-category">Tipe Standar</span>
-                    <h3>Kamar A01</h3>
-                    <strong>Rp700.000</strong><small>/bulan</small>
-                    <div class="btn-card-group">
-                        <a href="#" class="btn-card-detail" onclick="bukaModal('a01')">
-                                <img src="assets/images/eye.png" alt="detail" width="16" height="16" style="border-radius: 80%; margin-right: 5px;"> 
-                                Detail
-                        </a>
-                        <a href="https://wa.me/6281234567890" target="_blank" class="btn-card-wa">
-                            <img src="assets/images/wa.png" alt="hubungi" width="16" height="16" style="border-radius: 80%; margin-right: 5px;" > Hubungi
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="kamar-card">
-                <div class="badge-status tersedia">Tersedia</div>
-                <div class="kamar-img" style=" background-image: url(assets/images/kos-depan.jpg); background-size: cover; background-position: center;"></div>
-               
-                <div class="kamar-detail">
-                    <span class="room-category">Tipe Standar</span>
-                    <h3>Kamar A01</h3>
-                    <strong>Rp700.000</strong><small>/bulan</small>
-                    <div class="btn-card-group">
-                        <a href="#" class="btn-card-detail" onclick="bukaModal('a01')">
-                                <img src="assets/images/eye.png" alt="detail" width="16" height="16" style="border-radius: 80%; margin-right: 5px;"> 
-                                Detail
-                        </a>
-                        <a href="https://wa.me/6281234567890" target="_blank" class="btn-card-wa">
-                            <img src="assets/images/wa.png" alt="hubungi" width="16" height="16" style="border-radius: 80%; margin-right: 5px;" > Hubungi
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="kamar-card">
-                <div class="badge-status tersedia">Tersedia</div>
-                <div class="kamar-img" style=" background-image: url(assets/images/kos-depan.jpg); background-size: cover; background-position: center;"></div>
-               
-                <div class="kamar-detail">
-                    <span class="room-category">Tipe Standar</span>
-                    <h3>Kamar A01</h3>
-                    <strong>Rp700.000</strong><small>/bulan</small>
-                    <div class="btn-card-group">
-                        <a href="#" class="btn-card-detail" onclick="bukaModal('a01')">
-                                <img src="assets/images/eye.png" alt="detail" width="16" height="16" style="border-radius: 80%; margin-right: 5px;"> 
-                                Detail
-                        </a>
-                        <a href="https://wa.me/6281234567890" target="_blank" class="btn-card-wa">
-                            <img src="assets/images/wa.png" alt="hubungi" width="16" height="16" style="border-radius: 80%; margin-right: 5px;" > Hubungi
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="kamar-card">
-                <div class="badge-status tersedia">Tersedia</div>
-                <div class="kamar-img" style=" background-image: url(assets/images/kos-depan.jpg); background-size: cover; background-position: center;"></div>
-               
-                <div class="kamar-detail">
-                    <span class="room-category">Tipe Standar</span>
-                    <h3>Kamar A01</h3>
-                    <strong>Rp700.000</strong><small>/bulan</small>
-                    <div class="btn-card-group">
-                        <a href="#" class="btn-card-detail" onclick="bukaModal('a01')">
-                                <img src="assets/images/eye.png" alt="detail" width="16" height="16" style="border-radius: 80%; margin-right: 5px;"> 
-                                Detail
-                        </a>
-                        <a href="https://wa.me/6281234567890" target="_blank" class="btn-card-wa">
-                            <img src="assets/images/wa.png" alt="hubungi" width="16" height="16" style="border-radius: 80%; margin-right: 5px;" > Hubungi
-                        </a>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="kamar-card">
-                <div class="badge-status tersedia">Tersedia</div>
-                <div class="kamar-img" style=" background-image: url(assets/images/kos-depan.jpg); background-size: cover; background-position: center;"></div>
-               
-                <div class="kamar-detail">
-                    <span class="room-category">Tipe Standar</span>
-                    <h3>Kamar A01</h3>
-                    <strong>Rp700.000</strong><small>/bulan</small>
-                    <div class="btn-card-group">
-                        <a href="#" class="btn-card-detail" onclick="bukaModal('a01')">
-                                <img src="assets/images/eye.png" alt="detail" width="16" height="16" style="border-radius: 80%; margin-right: 5px;"> 
-                                Detail
-                        </a>
-                        <a href="https://wa.me/6281234567890" target="_blank" class="btn-card-wa">
-                            <img src="assets/images/wa.png" alt="hubungi" width="16" height="16" style="border-radius: 80%; margin-right: 5px;" > Hubungi
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="kamar-card">
-                <div class="badge-status tersedia">Tersedia</div>
-                <div class="kamar-img" style=" background-image: url(assets/images/kos-depan.jpg); background-size: cover; background-position: center;"></div>
-               
-                <div class="kamar-detail">
-                    <span class="room-category">Tipe Standar</span>
-                    <h3>Kamar A01</h3>
-                    <strong>Rp700.000</strong><small>/bulan</small>
-                    <div class="btn-card-group">
-                        <a href="#" class="btn-card-detail" onclick="bukaModal('a01')">
-                                <img src="assets/images/eye.png" alt="detail" width="16" height="16" style="border-radius: 80%; margin-right: 5px;"> 
-                                Detail
-                        </a>
-                        <a href="https://wa.me/6281234567890" target="_blank" class="btn-card-wa">
-                            <img src="assets/images/wa.png" alt="hubungi" width="16" height="16" style="border-radius: 80%; margin-right: 5px;" > Hubungi
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-
             </div>
         </section>
 
-    <section class="kamar-preview section-padding" id="kamar">
-        <div class="section-title">
-            <h2>Tentukan Kamar Pilihan</h2>
-            <p>Pilih tipe hunian terbaik yang sesuai dengan kebutuhan aktivitasmu.</p>
-        </div>
-        
-        <div class="kamar-grid">
-            <div class="kamar-card">
-                <div class="badge-status tersedia">Tersedia</div>
-                <div class="kamar-img" style=" background-image: url(assets/images/kos-depan.jpg); background-size: cover; background-position: center;"></div>
-               
-                <div class="kamar-detail">
-                    <span class="room-category">Tipe Standar</span>
-                    <h3>Kamar A01</h3>
-                    <strong>Rp700.000</strong><small>/bulan</small>
-                    <div class="btn-card-group">
-                        <a href="#" class="btn-card-detail" onclick="bukaModal('a01')">
-                                <img src="assets/images/eye.png" alt="detail" width="16" height="16" style="border-radius: 80%; margin-right: 5px;"> 
-                                Detail
-                        </a>
-                        <a href="https://wa.me/6281234567890" target="_blank" class="btn-card-wa">
-                            <img src="assets/images/wa.png" alt="hubungi" width="16" height="16" style="border-radius: 80%; margin-right: 5px;" > Hubungi
-                        </a>
+        <section class="features-section section-padding" id="panduan">
+            <div class="panduan-tab-container">
+                
+                <div class="panduan-main-title">
+                    <span class="section-badge">Alur Hunian</span>
+                    <h2>4 Langkah Mudah <br>Tinggal di TinaKOS</h2>
+                    <p>Ikuti panduan praktis berikut untuk mulai menikmati hunian kos digital terbaik di Kota Palu.</p>
+                </div>
+
+                <div class="panduan-tab-box">
+                    <div class="tab-navigation">
+                        <button class="tab-btn active" onclick="bukaLangkah(event, 'langkah1')">Pilih Kamar</button>
+                        <button class="tab-btn" onclick="bukaLangkah(event, 'langkah2')">Hubungi Ibu Kos</button>
+                        <button class="tab-btn" onclick="bukaLangkah(event, 'langkah3')">Bayar Sewa</button>
+                        <button class="tab-btn" onclick="bukaLangkah(event, 'langkah4')">Siap Huni</button>
+                    </div>
+
+                    <div class="tab-content-wrapper">
+                        
+                        <div class="tab-pane active" id="langkah1">
+                            <span class="pane-number">Langkah 01</span>
+                            <p>Jelajahi rekomendasi pilihan kamar terbaik kami langsung di halaman utama website ini. Sesuaikan tipe kamar dengan fasilitas penunjang yang Komiu butuhkan seperti AC, Wifi, atau kamar mandi dalam.</p>
+                            <a href="#kamar" class="btn-pane-action" onclick="bukaHalaman('kamarpage')">Lihat Kamar Pilihan <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+
+                        <div class="tab-pane" id="langkah2">
+                            <span class="pane-number">Langkah 02</span>
+                            <p>Konfirmasi unit kamar pilihan Komiu secara instan atau atur jadwal survei lokasi langsung bersama Ibu Kos. Cukup klik tombol WhatsApp untuk memulai obrolan hangat.</p>
+                            <a href="https://wa.me/6281234567890" target="_blank" class="btn-pane-action btn-pane-wa">Hubungi via WhatsApp <i class="fa-brands fa-whatsapp"></i></a>
+                        </div>
+
+                        <div class="tab-pane" id="langkah3">
+                            <span class="pane-number">Langkah 03</span>
+                            <p>Selesaikan transaksi pembayaran sewa secara aman, cepat, dan transparan melalui sistem manajemen digital kami. Anda akan menerima nota digital resmi sebagai bukti transaksi yang sah.</p>
+                        </div>
+
+                        <div class="tab-pane" id="langkah4">
+                            <span class="pane-number">Langkah 04</span>
+                            <p>Selamat bergabung! Serah terima kunci fisik atau kode akses kamar akan diproses langsung oleh pengelola kos. Kamar rapi, bersih, dan nyaman siap menyambut kedatangan harian Komiu.</p>
+                        </div>
+
                     </div>
                 </div>
-            </div>
 
-            <div class="kamar-card">
-                <div class="badge-status tersedia">Tersedia</div>
-                <div class="kamar-img" style=" background-image: url(assets/images/kos-depan.jpg); background-size: cover; background-position: center;"></div>
-               
-                <div class="kamar-detail">
-                    <span class="room-category">Tipe Standar</span>
-                    <h3>Kamar A01</h3>
-                    <strong>Rp700.000</strong><small>/bulan</small>
-                    <div class="btn-card-group">
-                        <a href="#" class="btn-card-detail" onclick="bukaModal('a01')">
-                                <img src="assets/images/eye.png" alt="detail" width="16" height="16" style="border-radius: 80%; margin-right: 5px;"> 
-                                Detail
-                        </a>
-                        <a href="https://wa.me/6281234567890" target="_blank" class="btn-card-wa">
-                            <img src="assets/images/wa.png" alt="hubungi" width="16" height="16" style="border-radius: 80%; margin-right: 5px;" > Hubungi
-                        </a>
+            </div>
+        </section>
+    </div>
+
+
+    <div id="halaman-kamarpage" class="halaman-wrapper" style="display: none;">
+        <section class="kamar-preview section-padding" id="kamar">
+            <div class="section-title">
+                <h2>Tentukan Kamar Pilihan</h2>
+                <p>Pilih tipe hunian terbaik yang sesuai dengan kebutuhan aktivitasmu.</p>
+            </div>
+            
+            <div class="kamar-grid">
+                <div class="kamar-card">
+                    <div class="badge-status tersedia">Tersedia</div>
+                    <div class="kamar-img" style="background-image: url(assets/images/kos-depan.jpg); background-size: cover; background-position: center;"></div>
+                    <div class="kamar-detail">
+                        <span class="room-category">Tipe Standar</span>
+                        <h3>Kamar A01</h3>
+                        <strong>Rp700.000</strong><small>/bulan</small>
+                        <div class="btn-card-group">
+                            <a href="#" class="btn-card-detail" onclick="bukaModal('a01')">
+                                <img src="assets/images/eye.png" alt="detail" width="16" height="16" style="border-radius: 80%; margin-right: 5px;"> Detail
+                            </a>
+                            <a href="https://wa.me/6281234567890" target="_blank" class="btn-card-wa">
+                                <img src="assets/images/wa.png" alt="hubungi" width="16" height="16" style="border-radius: 80%; margin-right: 5px;"> Hubungi
+                            </a>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="kamar-card">
-                <div class="badge-status tersedia">Tersedia</div>
-                <div class="kamar-img" style=" background-image: url(assets/images/kos-depan.jpg); background-size: cover; background-position: center;"></div>
-               
-                <div class="kamar-detail">
-                    <span class="room-category">Tipe Standar</span>
-                    <h3>Kamar A01</h3>
-                    <strong>Rp700.000</strong><small>/bulan</small>
-                    <div class="btn-card-group">
-                        <a href="#" class="btn-card-detail" onclick="bukaModal('a01')">
-                                <img src="assets/images/eye.png" alt="detail" width="16" height="16" style="border-radius: 80%; margin-right: 5px;"> 
-                                Detail
-                        </a>
-                        <a href="https://wa.me/6281234567890" target="_blank" class="btn-card-wa">
-                            <img src="assets/images/wa.png" alt="hubungi" width="16" height="16" style="border-radius: 80%; margin-right: 5px;" > Hubungi
-                        </a>
+                <div class="kamar-card">
+                    <div class="badge-status tersedia">Tersedia</div>
+                    <div class="kamar-img" style="background-image: url(assets/images/kos-depan.jpg); background-size: cover; background-position: center;"></div>
+                    <div class="kamar-detail">
+                        <span class="room-category">Tipe Standar</span>
+                        <h3>Kamar A01</h3>
+                        <strong>Rp700.000</strong><small>/bulan</small>
+                        <div class="btn-card-group">
+                            <a href="#" class="btn-card-detail" onclick="bukaModal('a01')">
+                                <img src="assets/images/eye.png" alt="detail" width="16" height="16" style="border-radius: 80%; margin-right: 5px;"> Detail
+                            </a>
+                            <a href="https://wa.me/6281234567890" target="_blank" class="btn-card-wa">
+                                <img src="assets/images/wa.png" alt="hubungi" width="16" height="16" style="border-radius: 80%; margin-right: 5px;"> Hubungi
+                            </a>
+                        </div>
                     </div>
                 </div>
-            </div>
 
+                <div class="kamar-card">
+                    <div class="badge-status tersedia">Tersedia</div>
+                    <div class="kamar-img" style="background-image: url(assets/images/kos-depan.jpg); background-size: cover; background-position: center;"></div>
+                    <div class="kamar-detail">
+                        <span class="room-category">Tipe Standar</span>
+                        <h3>Kamar A01</h3>
+                        <strong>Rp700.000</strong><small>/bulan</small>
+                        <div class="btn-card-group">
+                            <a href="#" class="btn-card-detail" onclick="bukaModal('a01')">
+                                <img src="assets/images/eye.png" alt="detail" width="16" height="16" style="border-radius: 80%; margin-right: 5px;"> Detail
+                            </a>
+                            <a href="https://wa.me/6281234567890" target="_blank" class="btn-card-wa">
+                                <img src="assets/images/wa.png" alt="hubungi" width="16" height="16" style="border-radius: 80%; margin-right: 5px;"> Hubungi
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <div style="text-align: center; margin-top: 30px;">
-                <a href="#" onclick="showSection('daftarkamar')" class="btn-pane-action">
-                     Lihat Selengkapnya →
+                <a href="#" onclick="tampilkanDaftarKamarPenuh()" class="btn-pane-action">
+                    Lihat Selengkapnya →
                 </a>
             </div>
+        </section>
 
-    </section>
+        <section class="sec-daftarKamar" id="daftarkamar" style="display: none;">
+            <div class="section-title">
+                <h2>Daftar Kamar TinaKOS</h2>
+                <p>Pilih kamar sesuai seleranya komiu.</p>
+            </div>
+            
+            <div class="kamar-grid">
+                <div class="kamar-card">
+                    <div class="badge-status tersedia">Tersedia</div>
+                    <div class="kamar-img" style="background-image: url(assets/images/kos-depan.jpg); background-size: cover; background-position: center;"></div>
+                    <div class="kamar-detail">
+                        <span class="room-category">Tipe Standar</span>
+                        <h3>Kamar A01</h3>
+                        <strong>Rp700.000</strong><small>/bulan</small>
+                        <div class="btn-card-group">
+                            <a href="#" class="btn-card-detail" onclick="bukaModal('a01')">
+                                <img src="assets/images/eye.png" alt="detail" width="16" height="16" style="border-radius: 80%; margin-right: 5px;"> Detail
+                            </a>
+                            <a href="https://wa.me/6281234567890" target="_blank" class="btn-card-wa">
+                                <img src="assets/images/wa.png" alt="hubungi" width="16" height="16" style="border-radius: 80%; margin-right: 5px;"> Hubungi
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                </div>
+        </section>
 
-    <!--modal buka card-->
+        <section class="mutu-banner-section" id="mutu">
+            <div class="mutu-top-green-banner">
+                <span class="section-badge">Kualitas Hunian</span>
+                <h2>Kenapa Memilih TinaKOS?</h2>
+                <p>Sistem manajemen modern dengan standar fasilitas terbaik demi kenyamanan maksimal harian Komiu.</p>
+            </div>
+
+            <div class="mutu-hanging-container">
+                <div class="mutu-hanging-card">
+                    <div class="mutu-card-img-wrapper">
+                        <img src="assets/images/mutu-kamar.jpg" alt="Kamar Eksklusif TinaKOS">
+                        <div class="mutu-step-number">1</div>
+                    </div>
+                    <div class="mutu-card-text">
+                        <h3>Kamar Eksklusif</h3>
+                        <p>Tersedia 5 unit kamar siap huni dengan perawatan AC harian dan perabotan kamar berkala.</p>
+                    </div>
+                </div>
+
+                <div class="mutu-hanging-card">
+                    <div class="mutu-card-img-wrapper">
+                        <img src="assets/images/mutu-wifi.jpg" alt="High Speed Wi-Fi TinaKOS">
+                        <div class="mutu-step-number">2</div>
+                    </div>
+                    <div class="mutu-card-text">
+                        <h3>Wi-Fi Cepat</h3>
+                        <p>Koneksi internet fiber cepat gratis tanpa kuota untuk mendukung kelancaran tugas kuliah Komiu.</p>
+                    </div>
+                </div>
+
+                <div class="mutu-hanging-card">
+                    <div class="mutu-card-img-wrapper">
+                        <img src="assets/images/mutu-kebersihan.jpg" alt="100% Kebersihan TinaKOS">
+                        <div class="mutu-step-number">3</div>
+                    </div>
+                    <div class="mutu-card-text">
+                        <h3>100% Kebersihan</h3>
+                        <p>Lingkungan koridor dan fasilitas umum dibersihkan secara rutin guna menjaga higienitas hunian.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+
+    <div id="halaman-kontakpage" class="halaman-wrapper" style="display: none;">
+        <section class="features-section section-padding" id="kontak">
+            <article class="judul-kontak">
+                <h3>Kontak Kami</h3>
+                <p class="paragraf-kontak">Ingin tahu lebih lanjut? Hubungi kami</p>
+            </article>
+
+            <div class="info-kontak">
+                <div class="item-kontak">
+                    <div class="icon-kontak"><i class="fa-solid fa-phone"></i></div>
+                    <strong class="judul-info">Telepon</strong>
+                    <p class="isi-info">081234567890</p>
+                </div>
+                <div class="item-kontak">
+                    <div class="icon-kontak"><i class="fa-solid fa-envelope"></i></div>
+                    <strong class="judul-info">Email</strong>
+                    <p class="isi-info">aiman@gmail.com</p>
+                </div>
+                <div class="item-kontak">
+                    <div class="icon-kontak"><i class="fa-solid fa-location-dot"></i></div>
+                    <strong class="judul-info">Alamat</strong>
+                    <p class="isi-info">jln.buntu</p>
+                </div>
+            </div>
+
+            <div class="peta-kontak">
+                <h3>Peta Lokasi</h3>
+                <a href="https://maps.app.goo.gl/Lsq8iqaJLKyQJPMQ6">jalan kos balbalbala</a>
+                <img src="assets/images/logo-tinakos.png" alt="gambar maps" style="border-radius: 20px;">
+            </div>
+        </section>
+    </div>
+
     <div class="modal-overlay" id="modalKamar">
         <div class="modal-card">
             <button class="modal-close" onclick="tutupModal()"> ✕</button>
             <div class="modal-img" id="modalImg"></div>
             <div class="modal-body">
-                
                 <h3 id="modalNama"></h3>
                 <strong id="modalHarga"></strong><small>/bulan</small>
                 <ul class="facilities-list" id="modalFasilitas"></ul>
@@ -308,102 +273,16 @@
                 </a>
             </div>
         </div>
-        </div>
-        
-    <section class="mutu-banner-section" id="mutu">
-        
-        <div class="mutu-top-green-banner">
-            <span class="section-badge">Kualitas Hunian</span>
-            <h2>Kenapa Memilih TinaKOS?</h2>
-            <p>Sistem manajemen modern dengan standar fasilitas terbaik demi kenyamanan maksimal harian Komiu.</p>
-        </div>
-
-        <div class="mutu-hanging-container">
-            
-            <div class="mutu-hanging-card">
-                <div class="mutu-card-img-wrapper">
-                    <img src="assets/images/mutu-kamar.jpg" alt="Kamar Eksklusif TinaKOS">
-                    <div class="mutu-step-number">1</div>
-                </div>
-                <div class="mutu-card-text">
-                    <h3>Kamar Eksklusif</h3>
-                    <p>Tersedia 5 unit kamar siap huni dengan perawatan AC harian dan perabotan kamar berkala.</p>
-                </div>
-            </div>
-
-            <div class="mutu-hanging-card">
-                <div class="mutu-card-img-wrapper">
-                    <img src="assets/images/mutu-wifi.jpg" alt="High Speed Wi-Fi TinaKOS">
-                    <div class="mutu-step-number">2</div>
-                </div>
-                <div class="mutu-card-text">
-                    <h3>Wi-Fi Cepat</h3>
-                    <p>Koneksi internet fiber cepat gratis tanpa kuota untuk mendukung kelancaran tugas kuliah Komiu.</p>
-                </div>
-            </div>
-
-            <div class="mutu-hanging-card">
-                <div class="mutu-card-img-wrapper">
-                    <img src="assets/images/mutu-kebersihan.jpg" alt="100% Kebersihan TinaKOS">
-                    <div class="mutu-step-number">3</div>
-                </div>
-                <div class="mutu-card-text">
-                    <h3>100% Kebersihan</h3>
-                    <p>Lingkungan koridor dan fasilitas umum dibersihkan secara rutin guna menjaga higienitas hunian.</p>
-                </div>
-            </div>
-
-        </div>
-
-    </section>
-
-    <section class="features-section section-padding" id="kontak">
-
-<article class="judul-kontak">
-        <h3>Kontak Kami</h3>
-        <p class="paragraf-kontak">Ingin tahu lebih lanjut? Hubungi kami</p>
-    </article>
-
-    <div class="info-kontak">
-        <div class="item-kontak">
-            <div class="icon-kontak">
-                <i class="fa-solid fa-phone"></i>
-            </div>
-            <strong class="judul-info">Telepon</strong>
-            <p class="isi-info">081234567890</p>
-        </div>
-        <div class="item-kontak">
-            <div class="icon-kontak">
-                <i class="fa-solid fa-envelope"></i>
-            </div>
-            <strong class="judul-info">Email</strong>
-            <p class="isi-info">aiman@gmail.com</p>
-        </div>
-        <div class="item-kontak">
-            <div class="icon-kontak">
-                <i class="fa-solid fa-location-dot"></i>
-            </div>
-            <strong class="judul-info">Alamat</strong>
-            <p class="isi-info">jln.buntu</p>
-        </div>
     </div>
 
-    <div class="peta-kontak">
-        <h3>Peta Lokasi</h3>
-        <a href="https://maps.app.goo.gl/Lsq8iqaJLKyQJPMQ6">jalan kos balbalbala</a>
-        <img src="assets/images/logo-tinakos.png" alt="gampar maps" style="border-radius: 20px;">
-    </div>
-
-
-        </section>
-
-    <a href="https://wa.me/6281234567890" class="floating-wa" target="_blank" title="Hubungi Ibu Kos">
+    <a href="https://wa.me/6282211239640" class="floating-wa" target="_blank" title="Hubungi Ibu Kos">
         <i class="fa-brands fa-whatsapp"></i>
     </a>
 
     <footer>
-        <p>&copy; 2026 TinaKOS. All Rights Reserved. Managed by Ibu Kos.</p>
+        <p>© 2026 TinaKOS. All Rights Reserved. Managed by Ibu Kos.</p>
     </footer>
+
 </main>
 
 <script src="assets/js/script.js"></script>
