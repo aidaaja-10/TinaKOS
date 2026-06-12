@@ -127,7 +127,7 @@ main {
 .hero-section {
     position: relative;
     height: 100vh;
-    background: url('../images/kos-depan.jpg') no-repeat center center/cover;
+    background: url('../images/kos3-depan.jpeg') no-repeat center center/cover;
     background-color: var(--myrtle-green);
     display: flex;
     flex-direction: column;
@@ -652,7 +652,7 @@ main {
 
 .kontak-layout-wrapper-v2 {
     max-width: 1200px;
-    margin: -140px auto 0 auto; /* Diperbaiki: Ditambahkan satuan px agar valid */
+    margin: -140px auto 0 auto; 
     display: grid;
     grid-template-columns: 1.45fr 0.55fr; 
     gap: 35px;
@@ -741,7 +741,7 @@ main {
 }
 
 .card-text-v2 h3 {
-    font-size: 1.2rem; /* Diperbaiki: Spasi kosong dihilangkan */
+    font-size: 1.2rem; 
     color: var(--dark-text);
     font-weight: 700;
     margin-bottom: 4px;
