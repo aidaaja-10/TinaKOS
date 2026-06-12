@@ -651,19 +651,22 @@ main {
 }
 
 .kontak-layout-wrapper-v2 {
+    display: flex;
+    flex-direction: row;
     max-width: 1200px;
     margin: -140px auto 0 auto; 
     display: grid;
     grid-template-columns: 1.45fr 0.55fr; 
     gap: 35px;
-    align-items: stretch; 
+    align-items: center;
+    width: 100%; 
 }
+
 
 /* Kolom Kiri: Informasi Kontak */
 .kontak-info-left-v2 {
-    padding-top: 0; /* Diperbaiki: Spasi kosong antara angka dan px dihilangkan */
-    display: flex;
-    flex-direction: column;
+    flex: 1;
+    padding-top: 0; 
     height: 100%;
     justify-content: space-between; 
 }
