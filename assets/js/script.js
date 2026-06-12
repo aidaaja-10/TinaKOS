@@ -63,44 +63,35 @@ window.addEventListener("scroll", () => {
         navbar.style.padding = "10px 40px";
         navbar.style.top = "25px";
     }
-
-// Halaman Panduan 
-
-function bukaLangkah(event, namaLangkah) {
-    // 1. Ambil semua elemen penjelasan panduan (yang memiliki class 'tab-pane')
-    var tabPanes = document.getElementsByClassName("tab-pane");
-    
-    // 2. Sembunyikan semua penjelasan tersebut dengan menghapus class 'active'
-    for (var i = 0; i < tabPanes.length; i++) {
-        tabPanes[i].classList.remove("active");
-    }
-
-    // 3. Ambil semua elemen tombol navigasi (yang memiliki class 'tab-btn')
-    var tabButtons = document.getElementsByClassName("tab-btn");
-    
-    // 4. Matikan warna aktif (garis bawah oranye) pada semua tombol navigasi
-    for (var j = 0; j < tabButtons.length; j++) {
-        tabButtons[j].classList.remove("active");
-    }
-
-    // 5. Tampilkan kembali penjelasan langkah yang ID-nya sesuai dengan yang diklik oleh user
-    document.getElementById(namaLangkah).classList.add("active");
-
-    // 6. Berikan warna aktif (garis bawah oranye) pada tombol yang baru saja diklik
-    event.currentTarget.classList.add("active");
-}
 });
-function bukaModal(data) {
+
+
+// DATA KAMAR
+const dataKamar = {
+    a01: {
+        nama: 'Kamar A01',
+        kategori: 'Tipe Standar',
+        harga: 'Rp700.000',
+        img: 'assets/images/kos-depan.jpg',
+        fasilitas: ['AC', 'Wi-Fi', 'Kamar Mandi Dalam'],
+        wa: 'https://wa.me/6281234567890'
+    },
+   
+};
+
+// MODAL
+function bukaModal(idKamar) {
+    const data = dataKamar[idKamar];
+
     document.getElementById('modalNama').textContent = data.nama;
-    document.getElementById('modalKategori').textContent = data.kategori;
     document.getElementById('modalHarga').textContent = data.harga;
-    document.getElementById('modalImg').style.backgroundImage = `url('${data.img}')`;
+    document.getElementById('modalImg').style.backgroundImage = "url('" + data.img + "')";
     document.getElementById('modalWa').href = data.wa;
 
     const list = document.getElementById('modalFasilitas');
     list.innerHTML = '';
-    data.fasilitas.forEach(f => {
-        list.innerHTML += `<li>${f}</li>`;
+    data.fasilitas.forEach(function(f) {
+        list.innerHTML += '<li>' + f + '</li>';
     });
 
     document.getElementById('modalKamar').classList.add('aktif');
@@ -113,3 +104,30 @@ function tutupModal() {
 document.getElementById('modalKamar').addEventListener('click', function(e) {
     if (e.target === this) tutupModal();
 });
+
+//pindah section ke daftar kamar
+function showSection(namaSection) {
+    var daftarKamar = document.getElementById('daftarkamar');
+    var previewKamar = document.getElementById('kamar');
+    var mutu = document.getElementById('mutu');
+    var kontak = document.getElementById('kontak');
+    var panduan = document.getElementById('panduan');
+
+    if (namaSection === 'daftarkamar') {
+        daftarKamar.style.display = 'block';
+        previewKamar.style.display = 'none';
+        mutu.style.display = 'none';
+        kontak.style.display = 'none';
+        panduan.style.display = 'none';
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+}
+
+function kembaliHome() {
+    document.getElementById('daftarkamar').style.display = 'none';
+    document.getElementById('kamar').style.display = '';
+    document.getElementById('mutu').style.display = '';
+    document.getElementById('kontak').style.display = '';
+    document.getElementById('panduan').style.display = '';
+    document.getElementById('daftarkamar').scrollIntoView({ behavior: 'smooth' });
+}

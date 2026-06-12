@@ -19,11 +19,11 @@
                 <span>TinaKOS</span>
             </div>
             <nav class="nav-links">
-                <a href="#home" class="active">Home</a>
-                <a href="#panduan">Panduan</a>
-                <a href="#kamar">Kamar</a>
-                <a href="#mutu">Mutu</a>
-                <a href="#kontak">Kontak</a>
+                <a href="#home" class="active" onclick="kembaliHome()">Home</a>
+                <a href="#panduan" onclick="kembaliHome()">Panduan</a>
+                <a href="#kamar" onclick="kembaliHome()">Kamar</a>
+                <a href="#mutu" onclick="kembaliHome()">Mutu</a>
+                <a href="#kontak" onclick="kembaliHome()">Kontak</a>
             </nav>
         </header>
 
@@ -85,24 +85,138 @@
         </div>
     </section>
 
-    <section class="kamar-preview section-padding" id="kamar">
-        <div class="modal-overlay" id="modalKamar">
-        <div class="modal-card">
-            <button class="modal-close" onclick="tutupModal()">
-                <i class="fa-solid fa-xmark"></i>
-            </button>
-            <div class="modal-img" id="modalImg"></div>
-            <div class="modal-body">
-                <span class="room-category" id="modalKategori"></span>
-                <h3 id="modalNama"></h3>
-                <strong id="modalHarga"></strong><small>/bulan</small>
-                <ul class="facilities-list" id="modalFasilitas"></ul>
-                <a id="modalWa" href="#" target="_blank" class="btn-card-wa">
-                    <i class="fa-brands fa-whatsapp"></i> Hubungi Ibu Kos
-                </a>
+    <section class="sec-daftarKamar" id="daftarkamar" style="display: none;">
+        <div class="section-title">
+            <h2>Daftar Kamar TinaKOS</h2>
+            <p>Pilih kamar sesuai seleranya komiu.</p>
+        </div>
+        
+        <div class="kamar-grid">
+            <div class="kamar-card">
+                <div class="badge-status tersedia">Tersedia</div>
+                <div class="kamar-img" style=" background-image: url(assets/images/kos-depan.jpg); background-size: cover; background-position: center;"></div>
+               
+                <div class="kamar-detail">
+                    <span class="room-category">Tipe Standar</span>
+                    <h3>Kamar A01</h3>
+                    <strong>Rp700.000</strong><small>/bulan</small>
+                    <div class="btn-card-group">
+                        <a href="#" class="btn-card-detail" onclick="bukaModal('a01')">
+                                <img src="assets/images/eye.png" alt="detail" width="16" height="16" style="border-radius: 80%; margin-right: 5px;"> 
+                                Detail
+                        </a>
+                        <a href="https://wa.me/6281234567890" target="_blank" class="btn-card-wa">
+                            <img src="assets/images/wa.png" alt="hubungi" width="16" height="16" style="border-radius: 80%; margin-right: 5px;" > Hubungi
+                        </a>
+                    </div>
+                </div>
             </div>
-        </div>
-        </div>
+
+            <div class="kamar-card">
+                <div class="badge-status tersedia">Tersedia</div>
+                <div class="kamar-img" style=" background-image: url(assets/images/kos-depan.jpg); background-size: cover; background-position: center;"></div>
+               
+                <div class="kamar-detail">
+                    <span class="room-category">Tipe Standar</span>
+                    <h3>Kamar A01</h3>
+                    <strong>Rp700.000</strong><small>/bulan</small>
+                    <div class="btn-card-group">
+                        <a href="#" class="btn-card-detail" onclick="bukaModal('a01')">
+                                <img src="assets/images/eye.png" alt="detail" width="16" height="16" style="border-radius: 80%; margin-right: 5px;"> 
+                                Detail
+                        </a>
+                        <a href="https://wa.me/6281234567890" target="_blank" class="btn-card-wa">
+                            <img src="assets/images/wa.png" alt="hubungi" width="16" height="16" style="border-radius: 80%; margin-right: 5px;" > Hubungi
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="kamar-card">
+                <div class="badge-status tersedia">Tersedia</div>
+                <div class="kamar-img" style=" background-image: url(assets/images/kos-depan.jpg); background-size: cover; background-position: center;"></div>
+               
+                <div class="kamar-detail">
+                    <span class="room-category">Tipe Standar</span>
+                    <h3>Kamar A01</h3>
+                    <strong>Rp700.000</strong><small>/bulan</small>
+                    <div class="btn-card-group">
+                        <a href="#" class="btn-card-detail" onclick="bukaModal('a01')">
+                                <img src="assets/images/eye.png" alt="detail" width="16" height="16" style="border-radius: 80%; margin-right: 5px;"> 
+                                Detail
+                        </a>
+                        <a href="https://wa.me/6281234567890" target="_blank" class="btn-card-wa">
+                            <img src="assets/images/wa.png" alt="hubungi" width="16" height="16" style="border-radius: 80%; margin-right: 5px;" > Hubungi
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="kamar-card">
+                <div class="badge-status tersedia">Tersedia</div>
+                <div class="kamar-img" style=" background-image: url(assets/images/kos-depan.jpg); background-size: cover; background-position: center;"></div>
+               
+                <div class="kamar-detail">
+                    <span class="room-category">Tipe Standar</span>
+                    <h3>Kamar A01</h3>
+                    <strong>Rp700.000</strong><small>/bulan</small>
+                    <div class="btn-card-group">
+                        <a href="#" class="btn-card-detail" onclick="bukaModal('a01')">
+                                <img src="assets/images/eye.png" alt="detail" width="16" height="16" style="border-radius: 80%; margin-right: 5px;"> 
+                                Detail
+                        </a>
+                        <a href="https://wa.me/6281234567890" target="_blank" class="btn-card-wa">
+                            <img src="assets/images/wa.png" alt="hubungi" width="16" height="16" style="border-radius: 80%; margin-right: 5px;" > Hubungi
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="kamar-card">
+                <div class="badge-status tersedia">Tersedia</div>
+                <div class="kamar-img" style=" background-image: url(assets/images/kos-depan.jpg); background-size: cover; background-position: center;"></div>
+               
+                <div class="kamar-detail">
+                    <span class="room-category">Tipe Standar</span>
+                    <h3>Kamar A01</h3>
+                    <strong>Rp700.000</strong><small>/bulan</small>
+                    <div class="btn-card-group">
+                        <a href="#" class="btn-card-detail" onclick="bukaModal('a01')">
+                                <img src="assets/images/eye.png" alt="detail" width="16" height="16" style="border-radius: 80%; margin-right: 5px;"> 
+                                Detail
+                        </a>
+                        <a href="https://wa.me/6281234567890" target="_blank" class="btn-card-wa">
+                            <img src="assets/images/wa.png" alt="hubungi" width="16" height="16" style="border-radius: 80%; margin-right: 5px;" > Hubungi
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="kamar-card">
+                <div class="badge-status tersedia">Tersedia</div>
+                <div class="kamar-img" style=" background-image: url(assets/images/kos-depan.jpg); background-size: cover; background-position: center;"></div>
+               
+                <div class="kamar-detail">
+                    <span class="room-category">Tipe Standar</span>
+                    <h3>Kamar A01</h3>
+                    <strong>Rp700.000</strong><small>/bulan</small>
+                    <div class="btn-card-group">
+                        <a href="#" class="btn-card-detail" onclick="bukaModal('a01')">
+                                <img src="assets/images/eye.png" alt="detail" width="16" height="16" style="border-radius: 80%; margin-right: 5px;"> 
+                                Detail
+                        </a>
+                        <a href="https://wa.me/6281234567890" target="_blank" class="btn-card-wa">
+                            <img src="assets/images/wa.png" alt="hubungi" width="16" height="16" style="border-radius: 80%; margin-right: 5px;" > Hubungi
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+
+            </div>
+        </section>
+
+    <section class="kamar-preview section-padding" id="kamar">
         <div class="section-title">
             <h2>Tentukan Kamar Pilihan</h2>
             <p>Pilih tipe hunian terbaik yang sesuai dengan kebutuhan aktivitasmu.</p>
@@ -111,158 +225,91 @@
         <div class="kamar-grid">
             <div class="kamar-card">
                 <div class="badge-status tersedia">Tersedia</div>
-                <div class="kamar-img" style="background-color: var(--desert-sand); background-image: url('assets/images/kamar1.jpg'); background-size: cover; background-position: center;">
-                    <i class="fa-solid fa-image placeholder-icon"></i>
-                </div>
+                <div class="kamar-img" style=" background-image: url(assets/images/kos-depan.jpg); background-size: cover; background-position: center;"></div>
+               
                 <div class="kamar-detail">
                     <span class="room-category">Tipe Standar</span>
                     <h3>Kamar A01</h3>
                     <strong>Rp700.000</strong><small>/bulan</small>
                     <div class="btn-card-group">
-                        <a href="#" class="btn-card-detail" onclick="bukaModal({
-                            nama: 'Kamar A01 ',
-                            kategori: 'Tipe Standar',
-                            harga: 'Rp700.000',
-                            img: 'assets/images/kamar1.jpg',
-                            fasilitas: ['AC', 'Wi-Fi', 'KM Dalam'],
-                            wa: 'https://wa.me/6281234567890'})">
-                                <i class="fa-solid fa-eye"></i> Detail
+                        <a href="#" class="btn-card-detail" onclick="bukaModal('a01')">
+                                <img src="assets/images/eye.png" alt="detail" width="16" height="16" style="border-radius: 80%; margin-right: 5px;"> 
+                                Detail
                         </a>
                         <a href="https://wa.me/6281234567890" target="_blank" class="btn-card-wa">
-                            <i class="fa-brands fa-whatsapp"></i> Hubungi
+                            <img src="assets/images/wa.png" alt="hubungi" width="16" height="16" style="border-radius: 80%; margin-right: 5px;" > Hubungi
                         </a>
                     </div>
                 </div>
             </div>
+
             <div class="kamar-card">
                 <div class="badge-status tersedia">Tersedia</div>
-                <div class="kamar-img" style="background-color: var(--desert-sand); background-image: url('assets/images/kamar1.jpg'); background-size: cover; background-position: center;">
-                    <i class="fa-solid fa-image placeholder-icon"></i>
-                </div>
+                <div class="kamar-img" style=" background-image: url(assets/images/kos-depan.jpg); background-size: cover; background-position: center;"></div>
+               
                 <div class="kamar-detail">
                     <span class="room-category">Tipe Standar</span>
                     <h3>Kamar A01</h3>
                     <strong>Rp700.000</strong><small>/bulan</small>
                     <div class="btn-card-group">
-                        <a href="#" class="btn-card-detail" onclick="bukaModal({
-                            nama: 'Kamar A01 ',
-                            kategori: 'Tipe Standar',
-                            harga: 'Rp700.000',
-                            img: 'assets/images/kamar1.jpg',
-                            fasilitas: ['AC', 'Wi-Fi', 'Kamar Mandi Dalam'],
-                            wa: 'https://wa.me/6281234567890'})">
-                                <i class="fa-solid fa-eye"></i> Detail
+                        <a href="#" class="btn-card-detail" onclick="bukaModal('a01')">
+                                <img src="assets/images/eye.png" alt="detail" width="16" height="16" style="border-radius: 80%; margin-right: 5px;"> 
+                                Detail
                         </a>
                         <a href="https://wa.me/6281234567890" target="_blank" class="btn-card-wa">
-                            <i class="fa-brands fa-whatsapp"></i> Hubungi
+                            <img src="assets/images/wa.png" alt="hubungi" width="16" height="16" style="border-radius: 80%; margin-right: 5px;" > Hubungi
                         </a>
                     </div>
                 </div>
             </div>
+
             <div class="kamar-card">
                 <div class="badge-status tersedia">Tersedia</div>
-                <div class="kamar-img" style="background-color: var(--desert-sand); background-image: url('assets/images/kamar1.jpg'); background-size: cover; background-position: center;">
-                    <i class="fa-solid fa-image placeholder-icon"></i>
-                </div>
+                <div class="kamar-img" style=" background-image: url(assets/images/kos-depan.jpg); background-size: cover; background-position: center;"></div>
+               
                 <div class="kamar-detail">
                     <span class="room-category">Tipe Standar</span>
                     <h3>Kamar A01</h3>
                     <strong>Rp700.000</strong><small>/bulan</small>
                     <div class="btn-card-group">
-                        <a href="#" class="btn-card-detail" onclick="bukaModal({
-                            nama: 'Kamar A01 ',
-                            kategori: 'Tipe Standar',
-                            harga: 'Rp700.000',
-                            img: 'assets/images/kamar1.jpg',
-                            fasilitas: ['AC', 'Wi-Fi', 'KM Dalam'],
-                            wa: 'https://wa.me/6281234567890'})">
-                                <i class="fa-solid fa-eye"></i> Detail
+                        <a href="#" class="btn-card-detail" onclick="bukaModal('a01')">
+                                <img src="assets/images/eye.png" alt="detail" width="16" height="16" style="border-radius: 80%; margin-right: 5px;"> 
+                                Detail
                         </a>
                         <a href="https://wa.me/6281234567890" target="_blank" class="btn-card-wa">
-                            <i class="fa-brands fa-whatsapp"></i> Hubungi
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="kamar-card">
-                <div class="badge-status tersedia">Tersedia</div>
-                <div class="kamar-img" style="background-color: var(--desert-sand); background-image: url('assets/images/kamar1.jpg'); background-size: cover; background-position: center;">
-                    <i class="fa-solid fa-image placeholder-icon"></i>
-                </div>
-                <div class="kamar-detail">
-                    <span class="room-category">Tipe Standar</span>
-                    <h3>Kamar A01</h3>
-                    <strong>Rp700.000</strong><small>/bulan</small>
-                    <div class="btn-card-group">
-                        <a href="#" class="btn-card-detail" onclick="bukaModal({
-                            nama: 'Kamar A01 ',
-                            kategori: 'Tipe Standar',
-                            harga: 'Rp700.000',
-                            img: 'assets/images/kamar1.jpg',
-                            fasilitas: ['AC', 'Wi-Fi', 'KM Dalam'],
-                            wa: 'https://wa.me/6281234567890'})">
-                                <i class="fa-solid fa-eye"></i> Detail
-                        </a>
-                        <a href="https://wa.me/6281234567890" target="_blank" class="btn-card-wa">
-                            <i class="fa-brands fa-whatsapp"></i> Hubungi
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="kamar-card">
-                <div class="badge-status tersedia">Tersedia</div>
-                <div class="kamar-img" style="background-color: var(--desert-sand); background-image: url('assets/images/kamar1.jpg'); background-size: cover; background-position: center;">
-                    <i class="fa-solid fa-image placeholder-icon"></i>
-                </div>
-                <div class="kamar-detail">
-                    <span class="room-category">Tipe Standar</span>
-                    <h3>Kamar A01</h3>
-                    <strong>Rp700.000</strong><small>/bulan</small>
-                    <div class="btn-card-group">
-                        <a href="#" class="btn-card-detail" onclick="bukaModal({
-                            nama: 'Kamar A01 ',
-                            kategori: 'Tipe Standar',
-                            harga: 'Rp700.000',
-                            img: 'assets/images/kamar1.jpg',
-                            fasilitas: ['AC', 'Wi-Fi', 'KM Dalam'],
-                            wa: 'https://wa.me/6281234567890'})">
-                                <i class="fa-solid fa-eye"></i> Detail
-                        </a>
-                        <a href="https://wa.me/6281234567890" target="_blank" class="btn-card-wa">
-                            <i class="fa-brands fa-whatsapp"></i> Hubungi
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="kamar-card">
-                <div class="badge-status tersedia">Tersedia</div>
-                <div class="kamar-img" style="background-color: var(--desert-sand); background-image: url('assets/images/kamar1.jpg'); background-size: cover; background-position: center;">
-                    <i class="fa-solid fa-image placeholder-icon"></i>
-                </div>
-                <div class="kamar-detail">
-                    <span class="room-category">Tipe Standar</span>
-                    <h3>Kamar A01</h3>
-                    <strong>Rp700.000</strong><small>/bulan</small>
-                    <div class="btn-card-group">
-                        <a href="#" class="btn-card-detail" onclick="bukaModal({
-                            nama: 'Kamar A01 ',
-                            kategori: 'Tipe Standar',
-                            harga: 'Rp700.000',
-                            img: 'assets/images/kamar1.jpg',
-                            fasilitas: ['AC', 'Wi-Fi', 'KM Dalam'],
-                            wa: 'https://wa.me/6281234567890'})">
-                                <i class="fa-solid fa-eye"></i> Detail
-                        </a>
-                        <a href="https://wa.me/6281234567890" target="_blank" class="btn-card-wa">
-                            <i class="fa-brands fa-whatsapp"></i> Hubungi
+                            <img src="assets/images/wa.png" alt="hubungi" width="16" height="16" style="border-radius: 80%; margin-right: 5px;" > Hubungi
                         </a>
                     </div>
                 </div>
             </div>
 
             </div>
-        </section>
 
+            <div style="text-align: center; margin-top: 30px;">
+                <a href="#" onclick="showSection('daftarkamar')" class="btn-pane-action">
+                     Lihat Selengkapnya →
+                </a>
+            </div>
+
+    </section>
+
+    <!--modal buka card-->
+    <div class="modal-overlay" id="modalKamar">
+        <div class="modal-card">
+            <button class="modal-close" onclick="tutupModal()"> ✕</button>
+            <div class="modal-img" id="modalImg"></div>
+            <div class="modal-body">
+                
+                <h3 id="modalNama"></h3>
+                <strong id="modalHarga"></strong><small>/bulan</small>
+                <ul class="facilities-list" id="modalFasilitas"></ul>
+                <a id="modalWa" href="#" target="_blank" class="btn-card-wa">
+                    <img src="assets/images/wa.png" alt="hubungi" width="16" height="16" style="border-radius: 80%;"> Hubungi Ibu Kos
+                </a>
+            </div>
+        </div>
+        </div>
+        
     <section class="mutu-banner-section" id="mutu">
         
         <div class="mutu-top-green-banner">
@@ -343,8 +390,8 @@
 
     <div class="peta-kontak">
         <h3>Peta Lokasi</h3>
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.3931806715336!2d119.891118774965!3d-0.8364321991554502!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2d8be942bc0a6703%3A0xf8a9048c767a7489!2sUNIVERSITAS%20TADULAKO!5e0!3m2!1sid!2sid!4v1781199938248!5m2!1sid!2sid"
-        width="100%" height="400" allowfullscreen="" loading="lazy"></iframe>
+        <a href="https://maps.app.goo.gl/Lsq8iqaJLKyQJPMQ6">jalan kos balbalbala</a>
+        <img src="assets/images/logo-tinakos.png" alt="gampar maps" style="border-radius: 20px;">
     </div>
 
 
