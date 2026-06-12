@@ -1,6 +1,5 @@
-// 1. KONTROL INTERAKTIF TAB 
+// 1. KONTROL INTERAKTIF TAB (ALUR HUNIAN)
 function bukaLangkah(event, namaLangkah) {
-
     var tabPanes = document.getElementsByClassName("tab-pane");
     for (var i = 0; i < tabPanes.length; i++) {
         tabPanes[i].classList.remove("active");
@@ -15,10 +14,9 @@ function bukaLangkah(event, namaLangkah) {
     event.currentTarget.classList.add("active");
 }
 
-// 2. LOGIKA NAVIGASI 3 HALAMAN UTAMA
+// 2. LOGIKA NAVIGASI MULTI-PAGE
 
 function bukaHalaman(namaHalaman) {
-
     const daftarHalaman = ['beranda', 'kamarpage', 'kontakpage'];
 
     daftarHalaman.forEach(hal => {
@@ -57,7 +55,8 @@ function tampilkanDaftarKamarPenuh() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
-// 3. EFEK VISUAL NAVBAR SAAT DI-SCROLL
+
+// 3. EFEK NAVBAR SAAT DI-SCROLL
 
 const navbar = document.querySelector(".navbar");
 
@@ -74,7 +73,8 @@ window.addEventListener("scroll", () => {
 });
 
 
-// 4. INTEGRASI DATA KAMAR 
+// 4. MANAGEMENT DATA KAMAR (DATABASE & RENDERING)
+
 const dataKamar = {
     a01: {
         nama: 'Kamar A01',
@@ -156,10 +156,10 @@ const dataKamar = {
         img: 'assets/images/kamar1.jpeg',
         fasilitas: ['Wi-Fi', '1 kamar'],
         wa: 'https://wa.me/6285256675414'
-    },
-
+    }
 };
 
+// 5. INTERAKSI MODAL BOX DETIL
 function bukaModal(idKamar) {
     const data = dataKamar[idKamar];
     if (!data) return; 
@@ -217,4 +217,5 @@ function renderKamar() {
     });
 }
 
+// Inisialisasi program saat web dimuat
 renderKamar();

@@ -1,4 +1,4 @@
-/* PALET WARNA */
+/*1. Dasar Style*/
 :root {
     --alloy-orange: #C95D16;
     --bright-yellow: #F7AA29;
@@ -11,7 +11,6 @@
     --card-shadow: 0 10px 30px rgba(55, 119, 121, 0.08);
 }
 
-/* DASAR HALAMAN */
 * {
     margin: 0;
     padding: 0;
@@ -37,7 +36,7 @@ main {
     width: 100%;
 }
 
-/* KONTROL  HALAMAN  */
+/* KONTROL INTERFACES HALAMAN */
 .halaman-wrapper {
     display: none; 
     width: 100%;
@@ -47,7 +46,16 @@ main {
     display: block; 
 }
 
-/* NAVIGATION BAR */
+.section-padding {
+    padding: 100px 6% 80px;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+/*2. NAVIGASI (NAVBAR)*/
 .navbar {
     position: fixed;
     top: 25px;
@@ -97,12 +105,6 @@ main {
     align-items: center;
 }
 
-@media (min-width: 769px) {
-    .nav-links {
-        margin-left: auto;
-    }
-}
-
 .nav-links a {
     text-decoration: none;
     color: rgba(255, 255, 255, 0.8);
@@ -114,7 +116,7 @@ main {
     border-bottom: 2px solid transparent;
 }
 
-.nav-links a:hover {
+.nav-links a:hover, .nav-links a.active {
     color: var(--white);
 }
 
@@ -123,7 +125,9 @@ main {
     border-bottom: 2px solid var(--bright-yellow);
 }
 
-/* HERO SECTION */
+/*3. HALAMAN UTAMA: BERANDA (HERO, PANDUAN, MUTU)*/
+
+/* Hero Section */
 .hero-section {
     position: relative;
     height: 100vh;
@@ -201,17 +205,7 @@ main {
     color: var(--myrtle-green);
 }
 
-/* TATA LETAK UMUM & SECTIONS */
-.section-padding {
-    padding: 100px 6% 80px;
-}
-
-.section-title {
-    text-align: center;
-    margin-bottom: 40px;
-}
-
-/*SECTION PANDUAN*/
+/* Section Panduan Tab */
 #panduan {
     background-color: #fdfbf7; 
     width: 100%;
@@ -273,16 +267,14 @@ main {
     color: #94a3b8; 
     cursor: pointer;
     transition: all 0.3s ease;
-    position: relative;
     border-bottom: 2px solid transparent;
 }
 
-.tab-btn:hover {
+.tab-btn:hover, .tab-btn.active {
     color: #377779;
 }
 
 .tab-btn.active {
-    color: #377779;
     font-weight: 700;
     border-bottom: 2px solid #C95D16; 
 }
@@ -351,135 +343,7 @@ main {
     background-color: #1fba55;
 }
 
-/*GRID CARD KAMAR (PREVIEW & DAFTAR PENUH)*/
-.kamar-preview, .sec-daftarKamar {
-    max-width: 1200px;
-    margin: 0 auto;
-    width: 100%;
-}
-
-.kamar-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
-}
-
-.kamar-card {
-    background-color: white;
-    border-radius: 20px;
-    overflow: visible;
-    box-shadow: var(--card-shadow);
-    position: relative;
-    transition: transform 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
-    border: 1px solid rgba(0,0,0,0.02);
-}
-
-.kamar-card:hover {
-    transform: translateY(-6px);
-}
-
-.badge-status {
-    position: absolute;
-    top: 15px;
-    left: 15px;
-    padding: 6px 14px;
-    border-radius: 30px;
-    font-size: 0.75rem;
-    font-weight: 700;
-    color: var(--white);
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
-    z-index: 5;
-}
-
-.badge-status.tersedia {
-    background-color: var(--myrtle-green);
-}
-
-.kamar-img {
-    height: 230px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
-}
-
-.kamar-detail {
-    padding: 25px;
-}
-
-.room-category {
-    font-size: 0.8rem;
-    color: var(--alloy-orange);
-    font-weight: 700;
-    text-transform: uppercase;
-    display: block;
-    margin-bottom: 5px;
-}
-
-.kamar-detail h3 {
-    font-size: 1.2rem;
-    color: var(--dark-text);
-    margin-bottom: 5px;
-}
-
-.kamar-detail strong {
-    font-size: 1.5rem;
-    color: var(--dark-text);
-    font-weight: 700;  
-}
-
-.kamar-detail small {
-    font-size: 1rem;
-    color: #7f8c8d;
-}
-
-.btn-card-group {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
-    margin-top: 20px;
-}
-
-.btn-card-detail {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    background-color: transparent;
-    color: var(--myrtle-green);
-    padding: 12px;
-    border-radius: 12px;
-    font-weight: 700;
-    border: 2px solid var(--myrtle-green);
-    transition: all 0.3s ease;
-}
-
-.btn-card-detail:hover {
-    background-color: var(--myrtle-green);
-    color: var(--white);
-}
-
-.btn-card-wa {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    background-color: var(--myrtle-green);
-    color: white;
-    padding: 12px;
-    border-radius: 12px;
-    font-weight: 700;
-    transition: background-color 0.3s ease;
-}
-
-.btn-card-wa:hover {
-    background-color: #27595b;
-}
-
-/* MUTU / KUALITAS*/
+/* Section Kualitas (Mutu) */
 .mutu-banner-section {
     background-color: #ffffff; 
     padding: 60px 0 100px 0;
@@ -603,8 +467,134 @@ main {
     line-height: 1.5;
 }
 
-/*SECTION KONTAK & MAPS */
+/*4. HALAMAN: DAFTAR KAMAR (GRID & CARDS) */
+.kamar-preview {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
 
+.kamar-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.kamar-card {
+    background-color: white;
+    border-radius: 20px;
+    overflow: visible;
+    box-shadow: var(--card-shadow);
+    position: relative;
+    transition: transform 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+    border: 1px solid rgba(0,0,0,0.02);
+}
+
+.kamar-card:hover {
+    transform: translateY(-6px);
+}
+
+.badge-status {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    padding: 6px 14px;
+    border-radius: 30px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--white);
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    z-index: 5;
+}
+
+.badge-status.tersedia {
+    background-color: var(--myrtle-green);
+}
+
+.badge-status.tidak-tersedia {
+    background-color: #e74c3c;
+}
+
+.kamar-img {
+    height: 230px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.kamar-detail {
+    padding: 25px;
+}
+
+.room-category {
+    font-size: 0.8rem;
+    color: var(--alloy-orange);
+    font-weight: 700;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.kamar-detail h3 {
+    font-size: 1.2rem;
+    color: var(--dark-text);
+    margin-bottom: 5px;
+}
+
+.kamar-detail strong {
+    font-size: 1.5rem;
+    color: var(--dark-text);
+    font-weight: 700;  
+}
+
+.kamar-detail small {
+    font-size: 1rem;
+    color: #7f8c8d;
+}
+
+.btn-card-group {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.btn-card-detail, .btn-card-wa {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    padding: 12px;
+    border-radius: 12px;
+    font-weight: 700;
+    transition: all 0.3s ease;
+}
+
+.btn-card-detail {
+    background-color: transparent;
+    color: var(--myrtle-green);
+    border: 2px solid var(--myrtle-green);
+}
+
+.btn-card-detail:hover {
+    background-color: var(--myrtle-green);
+    color: var(--white);
+}
+
+.btn-card-wa {
+    background-color: var(--myrtle-green);
+    color: white;
+}
+
+.btn-card-wa:hover {
+    background-color: #27595b;
+}
+
+/*5. HALAMAN: KONTAK & LOKASI MAPS*/
 .kontak-banner-hijau-v2 {
     background: linear-gradient(145deg, #1f494b 0%, #377779 60%, #4fa3a6 100%);
     color: var(--white);
@@ -643,7 +633,6 @@ main {
     max-width: 600px;
 }
 
-/* 2. Container Konten Utama Latar Putih */
 .kontak-main-container-v2 {
     background-color: var(--light-bg);
     width: 100%;
@@ -651,8 +640,6 @@ main {
 }
 
 .kontak-layout-wrapper-v2 {
-    display: flex;
-    flex-direction: row;
     max-width: 1200px;
     margin: -140px auto 0 auto; 
     display: grid;
@@ -662,48 +649,25 @@ main {
     width: 100%; 
 }
 
-
-/* Kolom Kiri: Informasi Kontak */
 .kontak-info-left-v2 {
-    flex: 1;
-    padding-top: 0; 
     height: 100%;
-    justify-content: space-between; 
 }
 
-.kontak-info-title-v2 h2 {
-    font-size: 1.8rem;
-    color: var(--dark-text);
-    font-weight: 800;
-    margin-bottom: 8px;
-}
-
-.kontak-info-title-v2 p {
-    font-size: 0.95rem;
-    color: #7f8c8d;
-    margin-bottom: 30px;
-}
-
-/* Area Grid 3 Kolom Menyamping */
 .kontak-grid-vertikal-v2 {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
     width: 100%;
-    flex-grow: 1; 
     margin-top: 20px;
 }
 
-/* Komponen Kartu Informasi Kontak */
 .card-info-kontak-v2 {
     background: var(--white);
     padding: 30px 20px;
     border-radius: 20px;
-    text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-start; 
     box-shadow: var(--card-shadow);
     border: 1px solid rgba(55, 119, 121, 0.05);
     transition: transform 0.3s ease;
@@ -723,10 +687,8 @@ main {
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-shrink: 0;
     margin-bottom: 15px;
     padding: 12px;
-    overflow: hidden;
 }
 
 .icon-lingkaran-v2 img {
@@ -736,9 +698,6 @@ main {
 }
 
 .card-text-v2 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     text-align: center;
 }
 
@@ -748,6 +707,7 @@ main {
     font-weight: 700;
     text-transform: uppercase;
     margin-bottom: 5px;
+    display: block;
 }
 
 .card-text-v2 h3 {
@@ -755,7 +715,6 @@ main {
     color: var(--dark-text);
     font-weight: 700;
     margin-bottom: 4px;
-    width: 100%;
     word-wrap: break-word;
 }
 
@@ -763,12 +722,9 @@ main {
     font-size: 0.88rem;
     color: #64748b;
     line-height: 1.5;
-    margin-top: 5px;
 }
 
-/* Kolom Kanan: Tempat Gambar Kubah Super Panjang */
 .kontak-image-right-v2 {
-    position: relative;
     display: flex;
     justify-content: flex-end;
 }
@@ -779,21 +735,17 @@ main {
     height: 500px; 
     background-size: cover;
     background-position: center;
-    border-top-left-radius: 220px;
-    border-top-right-radius: 220px;
+    border-radius: 220px 220px 0 0;
     border: 7px solid var(--white);
     box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
-    
-    /* Menarik foto melompat naik menembus area hijau */
     margin-top: -250px; 
     position: relative;
     z-index: 10;
 }
 
-/* 3. Bagian Peta (Maps) Lebar Penuh */
+/* Maps Wrapper */
 .kontak-maps-section-v2 {
     padding: 20px 6% 80px 6%;
-
     max-width: 1200px;
     margin: 0 auto;
 }
@@ -831,91 +783,9 @@ main {
     width: 100%;
     height: 450px;
     display: block;
-    border: 0;
 }
 
-.maps-memanjang-img-v2 {
-    width: 100%;
-    height: 450px;
-    object-fit: cover;
-    display: block;
-}
-
-/* Media Sosial */
-.kontak-sosmed-wrapper-v2 {
-    text-align: center;
-}
-
-.kontak-sosmed-wrapper-v2 h3 {
-    font-size: 1.2rem;
-    color: var(--dark-text);
-    margin-bottom: 15px;
-    font-weight: 700;
-}
-
-.sosmed-icons-v2 {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-}
-
-.sosmed-icons-v2 a {
-    width: 45px;
-    height: 45px;
-    background-color: var(--myrtle-green);
-    color: var(--white);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.2rem;
-    text-decoration: none;
-    transition: all 0.3s ease;
-}
-
-.sosmed-icons-v2 a:hover {
-    background-color: var(--bright-yellow);
-    color: var(--dark-text);
-    transform: scale(1.1);
-
-}
-
-@media (max-width: 992px) {
-    .kontak-banner-hijau-v2 {
-        padding-bottom: 80px;
-        text-align: center;
-    }
-    .kontak-layout-wrapper-v2 {
-        grid-template-columns: 1fr;
-        gap: 30px;
-        align-items: start;
-    }
-    .kontak-image-right-v2 {
-        justify-content: center;
-        order: -1; 
-    }
-    .kontak-arch-superlong-v2 {
-        margin-top: -100px;
-        height: 450px;
-        max-width: 100%;
-    }
-    .kontak-info-left-v2 {
-        padding-top: 10px;
-        text-align: center;
-    }
-    .kontak-grid-vertikal-v2 {
-        grid-template-columns: 1fr;
-        gap: 15px;
-    }
-    .card-info-kontak-v2 {
-        padding: 30px 20px;
-        height: auto;
-    }
-
-    
-}
-
-/* POP-UP DETAIL KAMAR*/
+/*6. INTERAKSI MODAL POPUP & FLOATING ACTION*/
 .modal-overlay {
     display: none;
     position: fixed;
@@ -938,7 +808,6 @@ main {
     overflow: hidden;
     position: relative;
     display: flex;
-    flex-direction: row;
 }
 
 .modal-close {
@@ -985,19 +854,15 @@ main {
     background-color: #f0f5f6;
     padding: 6px 14px;
     border-radius: 20px;
-    display: flex;
-    align-items: center;
     font-weight: 600;
 }
 
 .modal-body .btn-card-wa {
     width: 100%;
     margin-top: 15px;
-    padding: 12px;
-    border-radius: 12px;
 }
 
-/* Wa*/
+/* Floating WhatsApp Widget */
 .floating-wa {
     position: fixed;
     bottom: 30px;
@@ -1012,9 +877,7 @@ main {
     box-shadow: 0 8px 25px rgba(37, 211, 102, 0.3);
     z-index: 1000;
     transition: transform 0.3s ease;
-    text-decoration: none;
     padding: 12px;
-    overflow: hidden;
 }
 
 .floating-wa img {
@@ -1027,6 +890,7 @@ main {
     transform: scale(1.1);
 }
 
+/*7. FOOTER UTAMA */
 .footer-utama {
     background-color: var(--myrtle-green);
     width: 100%;
@@ -1047,8 +911,10 @@ main {
     color: var(--white);
 }
 
-/* Media Responsif */
+/*8. MEDIA QUERIES RESPONSIVE*/
 @media (max-width: 992px) {
+
+    /*Navbar*/
     .navbar {
         padding: 10px 20px;
         width: 94%;
@@ -1058,9 +924,13 @@ main {
     .nav-links a {
         margin: 0 10px;
     }
+
+    /*Kamar*/
     .kamar-grid {
         grid-template-columns: repeat(2, 1fr);
     }
+
+    /*Mutu*/
     .mutu-banner-section {
         padding: 40px 20px 60px 20px;
     }
@@ -1072,9 +942,39 @@ main {
         margin-top: -65px;
         gap: 25px;
     }
+
+    /*Kontak*/
+    .kontak-banner-hijau-v2 {
+        padding-bottom: 80px;
+        text-align: center;
+    }
+    .kontak-layout-wrapper-v2 {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    .kontak-image-right-v2 {
+        justify-content: center;
+        order: -1; 
+    }
+    .kontak-arch-superlong-v2 {
+        margin-top: -100px;
+        height: 450px;
+        max-width: 100%;
+    }
+    .kontak-info-left-v2 {
+        text-align: center;
+    }
+    .kontak-grid-vertikal-v2 {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    .card-info-kontak-v2 {
+        height: auto;
+    }
 }
 
 @media (max-width: 768px) {
+    /*Navbar*/
     .navbar {
         border-radius: 20px;
         flex-direction: column;
@@ -1097,7 +997,7 @@ main {
         grid-template-columns: 1fr; 
         gap: 40px;
     }
-    .kamar-grid, .info-kontak {
+    .kamar-grid {
         grid-template-columns: 1fr;
     }
     .modal-card {
