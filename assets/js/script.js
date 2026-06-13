@@ -31,11 +31,6 @@ function bukaHalaman(namaHalaman) {
         halamanTarget.style.display = 'block';
     }
 
-    if (namaHalaman === 'kamarpage') {
-        document.getElementById('kamar').style.display = 'block';
-        document.getElementById('mutu').style.display = 'block';
-        document.getElementById('daftarkamar').style.display = 'none';
-    }
 
     const semuaLinkNav = document.querySelectorAll(".nav-links a");
     semuaLinkNav.forEach(link => {
@@ -80,7 +75,6 @@ const dataKamar = {
         nama: 'Kamar A01',
         kategori: 'Tipe Eksklusif',
         harga: 'Rp1.200.000',
-        status: 'tersedia',
         img: 'assets/images/kost-2kamar.jpeg',
         fasilitas: ['Wi-Fi', '2 kamar', 'set dapur lengkap','lemari'],
         wa: 'https://wa.me/6285256675414'
@@ -89,7 +83,6 @@ const dataKamar = {
         nama: 'Kamar A02',
         kategori: 'Tipe Eksklusif',
         harga: 'Rp1.200.000',
-        status: 'tersedia',
         img: 'assets/images/kost-2kamar.jpeg',
         fasilitas: ['Wi-Fi', '2 kamar', 'set dapur lengkap', 'lemari'],
         wa: 'https://wa.me/6285256675414'
@@ -98,7 +91,6 @@ const dataKamar = {
         nama: 'Kamar A03',
         kategori: 'Tipe Eksklusif',
         harga: 'Rp1.200.000',
-        status: 'tersedia',
         img: 'assets/images/kost-2kamar.jpeg',
         fasilitas: ['Wi-Fi', '2 kamar', 'set dapur lengkap','lemari'],
         wa: 'https://wa.me/6285256675414'
@@ -107,7 +99,6 @@ const dataKamar = {
         nama: 'Kamar B01',
         kategori: 'Tipe Standar',
         harga: 'Rp800.000',
-        status: 'tersedia',
         img: 'assets/images/kamar1.jpeg',
         fasilitas: ['Wi-Fi', '1 kamar'],
         wa: 'https://wa.me/6285256675414'
@@ -116,7 +107,6 @@ const dataKamar = {
         nama: 'Kamar B02',
         kategori: 'Tipe Standar',
         harga: 'Rp800.000',
-        status: 'tersedia',
         img: 'assets/images/kamar1.jpeg',
         fasilitas: ['Wi-Fi', '1 kamar'],
         wa: 'https://wa.me/6285256675414'
@@ -125,7 +115,6 @@ const dataKamar = {
         nama: 'Kamar B03',
         kategori: 'Tipe Standar',
         harga: 'Rp800.000',
-        status: 'tersedia',
         img: 'assets/images/kamar1.jpeg',
         fasilitas: ['Wi-Fi', '1 kamar'],
         wa: 'https://wa.me/6285256675414'
@@ -134,7 +123,6 @@ const dataKamar = {
         nama: 'Kamar B04',
         kategori: 'Tipe Standar',
         harga: 'Rp800.000',
-        status: 'tersedia',
         img: 'assets/images/kamar1.jpeg',
         fasilitas: ['Wi-Fi', '1 kamar'],
         wa: 'https://wa.me/6285256675414'
@@ -143,7 +131,6 @@ const dataKamar = {
         nama: 'Kamar B05',
         kategori: 'Tipe Standar',
         harga: 'Rp800.000',
-        status: 'tersedia',
         img: 'assets/images/kamar1.jpeg',
         fasilitas: ['Wi-Fi', '1 kamar'],
         wa: 'https://wa.me/6285256675414'
@@ -152,12 +139,53 @@ const dataKamar = {
         nama: 'Kamar B06',
         kategori: 'Tipe Standar',
         harga: 'Rp800.000',
-        status: 'tersedia',
         img: 'assets/images/kamar1.jpeg',
         fasilitas: ['Wi-Fi', '1 kamar'],
         wa: 'https://wa.me/6285256675414'
     }
 };
+
+function buatKartu(id, kamar) {
+    const card = document.createElement('div');
+    card.className = 'kamar-card';
+
+    card.innerHTML = `
+        <div class="kamar-img" style="
+            background-image: url(${kamar.img});
+            background-size: cover;
+            background-position: center;">
+        </div>
+
+        <div class="kamar-detail">
+            <h3 class="kamar-nama">${kamar.nama}</h3>
+            <strong class="kamar-harga">${kamar.harga}</strong>
+            <small>/bulan</small>
+
+            <div class="btn-card-group">
+                <a href="#" class="btn-card-detail" onclick="bukaModal('${id}')">
+                    <img class="btn-icon" src="assets/images/cari.jpeg"" width="16" height="16"> Detail
+                </a>
+                <a href="${kamar.wa}" target="_blank" class="btn-card-wa">
+                    <img class="btn-icon" src="assets/images/wa.png" width="16" height="16"> Hubungi
+                </a>
+            </div>
+        </div>
+    `;
+
+    return card;
+}
+
+function renderKamar() {
+    const grid = document.querySelector('.kamar-grid');
+    if (!grid) return;
+
+    Object.entries(dataKamar).forEach(([id, kamar]) => {
+        const card = buatKartu(id, kamar);
+        grid.appendChild(card);
+    });
+}
+
+renderKamar();
 
 // 5. INTERAKSI MODAL BOX DETIL
 function bukaModal(idKamar) {
@@ -188,34 +216,3 @@ document.getElementById('modalKamar').addEventListener('click', function(e) {
     }
 });
 
-function renderKamar() {
-    const grid = document.querySelector('.kamar-grid');
-    const kartuContoh = document.getElementById('kartu-contoh');
-    if (!grid || !kartuContoh) return;
-
-    Object.entries(dataKamar).forEach(([id, kamar], index) => {
-        let card;
-
-        if (index === 0) {
-            card = kartuContoh;
-        } else {
-            card = kartuContoh.cloneNode(true);
-            card.removeAttribute('id');
-            grid.appendChild(card);
-        }
-
-        const badge = card.querySelector('.badge-status');
-        badge.textContent = kamar.status === 'tersedia' ? 'Tersedia' : 'Tidak Tersedia';
-        badge.className = `badge-status ${kamar.status === 'tersedia' ? 'tersedia' : 'tidak-tersedia'}`;
-
-        card.querySelector('.kamar-img').style.cssText = `background-image:url(${kamar.img});background-size:cover;background-position:center`;
-        card.querySelector('.room-category').textContent = kamar.kategori;
-        card.querySelector('.kamar-nama').textContent = kamar.nama;
-        card.querySelector('.kamar-harga').textContent = kamar.harga;
-        card.querySelector('.btn-card-detail').setAttribute('onclick', `bukaModal('${id}')`);
-        card.querySelector('.btn-card-wa').href = kamar.wa;
-    });
-}
-
-// Inisialisasi program saat web dimuat
-renderKamar();

@@ -182,24 +182,6 @@ main {
     justify-content: center;
 }
 
-.btn-outline-register {
-    text-decoration: none;
-    padding: 10px 24px !important; 
-    border-radius: 30px;
-    font-weight: 700;
-    font-size: 0.95rem !important; 
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    transition: all 0.3s ease;
-    background-color: rgba(255, 255, 255, 0.1);
-    color: var(--white);
-    backdrop-filter: blur(5px);
-    border: 2px solid rgba(255, 255, 255, 0.5);
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-}
-
 .btn-outline-register:hover {
     background-color: var(--white);
     color: var(--myrtle-green);
@@ -494,27 +476,6 @@ main {
     transform: translateY(-6px);
 }
 
-.badge-status {
-    position: absolute;
-    top: 15px;
-    left: 15px;
-    padding: 6px 14px;
-    border-radius: 30px;
-    font-size: 0.75rem;
-    font-weight: 700;
-    color: var(--white);
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
-    z-index: 5;
-}
-
-.badge-status.tersedia {
-    background-color: var(--myrtle-green);
-}
-
-.badge-status.tidak-tersedia {
-    background-color: #e74c3c;
-}
 
 .kamar-img {
     height: 230px;
@@ -594,20 +555,29 @@ main {
     background-color: #27595b;
 }
 
+.btn-icon {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;       
+    object-fit: cover;       
+    background-color: rgba(255,255,255,0.2);
+    padding: 3px;             
+}
+
 /*5. HALAMAN: KONTAK & LOKASI MAPS*/
-.kontak-banner-hijau-v2 {
+.kontak-banner {
     background: linear-gradient(145deg, #1f494b 0%, #377779 60%, #4fa3a6 100%);
     color: var(--white);
     padding: 69px 4% 220px 4%;
     width: 100%;
 }
 
-.kontak-banner-content-v2 {
+.isi-kontak-banner {
     max-width: 1200px;
     margin: 0 auto;
 }
 
-.section-badge-kontak {
+.badge-kontak {
     display: inline-block;
     background-color: rgba(255, 255, 255, 0.15);
     color: var(--bright-yellow);
@@ -619,27 +589,27 @@ main {
     margin-bottom: 15px;
 }
 
-.kontak-banner-content-v2 h1 {
+.isi-kontak-banner h1 {
     font-size: 3.8rem;
     font-weight: 800;
     margin-bottom: 12px;
     letter-spacing: -1px;
 }
 
-.kontak-banner-content-v2 p {
+.isi-kontak-banner p {
     font-size: 1.1rem;
     color: var(--desert-sand);
     line-height: 1.7;
     max-width: 600px;
 }
 
-.kontak-main-container-v2 {
+.isi-halaman-kontak {
     background-color: var(--light-bg);
     width: 100%;
     padding: 0 6% 60px 6%;
 }
 
-.kontak-layout-wrapper-v2 {
+.layout-isi-halaman {
     max-width: 1200px;
     margin: -140px auto 0 auto; 
     display: grid;
@@ -649,11 +619,11 @@ main {
     width: 100%; 
 }
 
-.kontak-info-left-v2 {
+.kontak-info-left {
     height: 100%;
 }
 
-.kontak-grid-vertikal-v2 {
+.kontak-grid-vertikal {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
@@ -661,7 +631,7 @@ main {
     margin-top: 20px;
 }
 
-.card-info-kontak-v2 {
+.card-info-kontak {
     background: var(--white);
     padding: 30px 20px;
     border-radius: 20px;
@@ -674,11 +644,11 @@ main {
     height: 230px; 
 }
 
-.card-info-kontak-v2:hover {
+.card-info-kontak:hover {
     transform: translateY(-5px);
 }
 
-.icon-lingkaran-v2 {
+.icon-lingkaran {
     width: 55px;
     height: 55px;
     background-color: rgba(55, 119, 121, 0.1);
@@ -691,17 +661,17 @@ main {
     padding: 12px;
 }
 
-.icon-lingkaran-v2 img {
+.icon-lingkaran img {
     width: 100%;
     height: 100%;
     object-fit: contain;
 }
 
-.card-text-v2 {
+.card-text {
     text-align: center;
 }
 
-.label-info-v2 {
+.label-info {
     font-size: 0.78rem;
     color: var(--alloy-orange);
     font-weight: 700;
@@ -710,7 +680,7 @@ main {
     display: block;
 }
 
-.card-text-v2 h3 {
+.card-text h3 {
     font-size: 1.2rem; 
     color: var(--dark-text);
     font-weight: 700;
@@ -718,18 +688,18 @@ main {
     word-wrap: break-word;
 }
 
-.card-text-v2 p {
+.card-text p {
     font-size: 0.88rem;
     color: #64748b;
     line-height: 1.5;
 }
 
-.kontak-image-right-v2 {
+.gambar-kontak {
     display: flex;
     justify-content: flex-end;
 }
 
-.kontak-arch-superlong-v2 {
+.foto-kontak {
     width: 100%;
     max-width: 400px;
     height: 500px; 
@@ -744,20 +714,20 @@ main {
 }
 
 /* Maps Wrapper */
-.kontak-maps-section-v2 {
+.kontak-maps-section {
     padding: 20px 6% 80px 6%;
     max-width: 1200px;
     margin: 0 auto;
 }
 
-.kontak-maps-title-v2 h2 {
+.kontak-maps-title h2 {
     font-size: 1.8rem;
     color: var(--dark-text);
     font-weight: 800;
     margin-bottom: 8px;
 }
 
-.kontak-maps-title-v2 a {
+.kontak-maps-title a {
     color: var(--myrtle-green);
     text-decoration: none;
     font-weight: 600;
@@ -766,11 +736,11 @@ main {
     margin-bottom: 25px;
 }
 
-.kontak-maps-title-v2 a:hover {
+.kontak-maps-title a:hover {
     color: var(--alloy-orange);
 }
 
-.kontak-iframe-wrapper-v2 {
+.kontak-maps {
     width: 100%;
     border-radius: 24px;
     overflow: hidden;
@@ -779,7 +749,7 @@ main {
     border: 1px solid rgba(0,0,0,0.05);
 }
 
-.kontak-iframe-wrapper-v2 iframe {
+.kontak-maps iframe {
     width: 100%;
     height: 450px;
     display: block;
@@ -944,31 +914,31 @@ main {
     }
 
     /*Kontak*/
-    .kontak-banner-hijau-v2 {
+    .kontak-banner {
         padding-bottom: 80px;
         text-align: center;
     }
-    .kontak-layout-wrapper-v2 {
+    .layout-isi-halaman {
         grid-template-columns: 1fr;
         gap: 30px;
     }
-    .kontak-image-right-v2 {
+    .gambar-kontak {
         justify-content: center;
         order: -1; 
     }
-    .kontak-arch-superlong-v2 {
+    .foto-kontak {
         margin-top: -100px;
         height: 450px;
         max-width: 100%;
     }
-    .kontak-info-left-v2 {
+    .kontak-info-left {
         text-align: center;
     }
-    .kontak-grid-vertikal-v2 {
+    .kontak-grid-vertikal {
         grid-template-columns: 1fr;
         gap: 15px;
     }
-    .card-info-kontak-v2 {
+    .card-info-kontak {
         height: auto;
     }
 }
