@@ -586,7 +586,7 @@ main {
 .kontak-banner {
     background: linear-gradient(145deg, #1f494b 0%, #377779 60%, #4fa3a6 100%);
     color: var(--white);
-    padding: 69px 4% 220px 4%;
+    padding: 92px 4% 220px 4%;
     width: 100%;
 }
 
@@ -599,7 +599,7 @@ main {
     display: inline-block;
     background-color: rgba(255, 255, 255, 0.15);
     color: var(--bright-yellow);
-    padding: 6px 16px;
+    padding: 8px 16px;
     border-radius: 30px;
     font-size: 0.8rem;
     font-weight: 700;
